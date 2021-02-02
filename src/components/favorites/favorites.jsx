@@ -1,20 +1,22 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import FavoriteLocationItems from '../favorites-location-items/favorites-location-items';
+import {loadHotels} from '../../store/reducers/favorites-reducer';
+import {getHotels} from '../../store/selectors/favorites-selectors';
+import FavoritesEmpty from '../favorites-empty/favorites-empty';
+import FavoritesContainer from '../favorites-container/favorites-container';
 
-const CITIES_LIST = [`Paris`, `Cologne`, `Brussels`, `Amsterdam`, `Hamburg`, `Dusseldorf`];
+const Favorites = ({cards, updateHotels}) => {
+  useEffect(() => {
+    updateHotels();
+  }, [JSON.stringify(cards)]);
 
-const Favorites = () => {
   return (
     <>
-      <main className="page__main page__main--favorites">
+      <main className={`page__main page__main--favorites${cards.length === 0 && ` page__main--favorites-empty` || ``}`}>
         <div className="page__favorites-container container">
-          <section className="favorites">
-            <h1 className="favorites__title">Saved listing</h1>
-            <ul className="favorites__list">
-              {CITIES_LIST.map((city, index) => <FavoriteLocationItems city={city} key={index}/>)}
-            </ul>
-          </section>
+          {cards.length === 0 && <FavoritesEmpty /> || <FavoritesContainer cards={cards} />}
         </div>
       </main>
       <footer className="footer container">
@@ -26,4 +28,17 @@ const Favorites = () => {
   );
 };
 
-export default Favorites;
+Favorites.propTypes = {
+  cards: PropTypes.array.isRequired,
+  updateHotels: PropTypes.func.isRequired
+};
+
+const mapStateToProps = (state) => ({
+  cards: getHotels(state)
+});
+
+const mapDispatchToProps = {
+  updateHotels: loadHotels
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Favorites);

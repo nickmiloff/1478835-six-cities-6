@@ -49,7 +49,7 @@ export const setError = (value, code) => ({type: SET_ERROR, value, code});
 export const loadHotels = () => (dispatch) => {
   dispatch(setLoaded(false));
 
-  sixCitiesApi.getHotels()
+  sixCitiesApi.getFavorites()
     .then((hotels) => {
       dispatch(setHotels(hotels));
       dispatch(setError(false, null));
