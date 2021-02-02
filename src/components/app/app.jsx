@@ -1,9 +1,13 @@
 import React from 'react';
+import Header from '../header/header';
 import Main from '../main/main';
 
 const App = () => {
   return (
-    <Main />
+    <div className="page page--gray page--main">
+      <Header />
+      <Main />
+    </div>
   );
 };
 
