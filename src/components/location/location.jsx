@@ -7,7 +7,8 @@ const Location = ({activeCity, currentCity, changeCity}) => {
       <a
         className={`locations__item-link tabs__item${activeCity === currentCity && ` tabs__item--active` || ``}`}
         href="#"
-        onClick={() => {
+        onClick={(evt) => {
+          evt.preventDefault();
           changeCity(currentCity);
         }}>
         <span>{currentCity}</span>

@@ -80,7 +80,7 @@ const sixCitiesApi = {
       .then((data) => data.map(this._transformDataToCard));
   },
 
-  getFavorite() {
+  getFavorites() {
     return instance.get(`favorite`)
       .then((response) => response.data)
       .then((data) => data.map(this._transformDataToCard));

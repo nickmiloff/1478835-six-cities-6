@@ -1,15 +1,11 @@
 import sixCitiesApi from '../../api/six-cities-api';
 
-const SET_HOTELS = `main/setHotels`;
-const SET_CITY = `main/setCity`;
-const SET_TYPE = `main/setType`;
-const SET_LOADED = `main/setLoaded`;
-const SET_ERROR = `main/setError`;
+const SET_HOTELS = `favorites/setHotels`;
+const SET_LOADED = `favorites/setLoaded`;
+const SET_ERROR = `favorites/setError`;
 
 const initialState = {
   hotels: [],
-  city: `Paris`,
-  type: `Popular`,
   loaded: false,
   error: {
     value: null,
@@ -17,24 +13,12 @@ const initialState = {
   }
 };
 
-const main = (state = initialState, action) => {
+const favorites = (state = initialState, action) => {
   switch (action.type) {
     case SET_HOTELS: {
       return {
         ...state,
         hotels: action.payload
-      };
-    }
-    case SET_CITY: {
-      return {
-        ...state,
-        city: action.payload
-      };
-    }
-    case SET_TYPE: {
-      return {
-        ...state,
-        type: action.payload
       };
     }
     case SET_LOADED: {
@@ -52,14 +36,13 @@ const main = (state = initialState, action) => {
         }
       };
     }
-    default:
+    default: {
       return state;
+    }
   }
 };
 
 export const setHotels = (hotels) => ({type: SET_HOTELS, payload: hotels});
-export const setCity = (city) => ({type: SET_CITY, payload: city});
-export const setType = (type) => ({type: SET_TYPE, payload: type});
 export const setLoaded = (value) => ({type: SET_LOADED, value});
 export const setError = (value, code) => ({type: SET_ERROR, value, code});
 
@@ -80,4 +63,4 @@ export const loadHotels = () => (dispatch) => {
     });
 };
 
-export default main;
+export default favorites;
