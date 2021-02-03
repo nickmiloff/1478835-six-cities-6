@@ -1,23 +1,19 @@
 import React from 'react';
-import {Route, Switch} from 'react-router-dom';
-import Favorites from '../favorites/favorites';
+import PropTypes from 'prop-types';
 import Header from '../header/header';
 import Main from '../main/main';
 
-const App = () => {
+const App = ({cards}) => {
   return (
     <div className="page page--gray page--main">
       <Header />
-      <Switch>
-        <Route path="/favorites">
-          <Favorites />
-        </Route>
-        <Route path="/">
-          <Main />
-        </Route>
-      </Switch>
+      <Main cards={cards} />
     </div>
   );
+};
+
+App.propTypes = {
+  cards: PropTypes.array.isRequired
 };
 
 export default App;
