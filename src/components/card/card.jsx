@@ -28,7 +28,7 @@ const Card = ({isPremium, previewImage, price, isFavorite, rating, title, id, ty
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{width: RATING_PER_STAR * rating}}></span>
+            <span style={{width: `${RATING_PER_STAR * rating}%`}}></span>
             <span className="visually-hidden">Rating</span>
           </div>
         </div>

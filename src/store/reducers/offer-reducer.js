@@ -1,21 +1,21 @@
 import sixCitiesApi from '../../api/six-cities-api';
 
-const SET_HOTELS = `favorites/setHotels`;
-const SET_LOADED = `favorites/setLoaded`;
-const SET_ERROR = `favorites/setError`;
+const SET_OFFER = `offer/setOffer`;
+const SET_LOADED = `offer/setLoaded`;
+const SET_ERROR = `offer/setError`;
 
 const initialState = {
-  hotels: [],
+  offer: {},
   loaded: false,
   error: null
 };
 
-const favorites = (state = initialState, action) => {
+const offer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_HOTELS: {
+    case SET_OFFER: {
       return {
         ...state,
-        hotels: action.payload
+        offer: action.payload
       };
     }
     case SET_LOADED: {
@@ -36,20 +36,19 @@ const favorites = (state = initialState, action) => {
   }
 };
 
-export const setHotels = (hotels) => ({type: SET_HOTELS, payload: hotels});
+export const setOffer = (off) => ({type: SET_OFFER, payload: off});
 export const setLoaded = (value) => ({type: SET_LOADED, payload: value});
 export const setError = (error) => ({type: SET_ERROR, payload: error});
 
-export const loadHotels = () => (dispatch) => {
+export const loadOffer = (id) => (dispatch) => {
   dispatch(setLoaded(false));
-
-  sixCitiesApi.getFavorites()
-    .then((hotels) => {
-      dispatch(setHotels(hotels));
-      dispatch(setError(null));
+  sixCitiesApi.getHotel(id)
+    .then((off) => {
+      dispatch(setOffer(off));
+      dispatch(setError(false, null));
     })
     .catch((err) => {
-      dispatch(setHotels([]));
+      dispatch(setOffer({}));
       dispatch(setError(err));
     })
     .finally(() => {
@@ -57,4 +56,4 @@ export const loadHotels = () => (dispatch) => {
     });
 };
 
-export default favorites;
+export default offer;

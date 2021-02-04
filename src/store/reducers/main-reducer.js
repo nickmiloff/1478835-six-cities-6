@@ -11,10 +11,7 @@ const initialState = {
   city: `Paris`,
   type: `Popular`,
   loaded: false,
-  error: {
-    value: null,
-    code: null
-  }
+  error: null
 };
 
 const main = (state = initialState, action) => {
@@ -40,16 +37,13 @@ const main = (state = initialState, action) => {
     case SET_LOADED: {
       return {
         ...state,
-        loaded: action.value
+        loaded: action.payload
       };
     }
     case SET_ERROR: {
       return {
         ...state,
-        error: {
-          value: action.value,
-          code: action.code
-        }
+        error: action.payload
       };
     }
     default:
@@ -60,8 +54,8 @@ const main = (state = initialState, action) => {
 export const setHotels = (hotels) => ({type: SET_HOTELS, payload: hotels});
 export const setCity = (city) => ({type: SET_CITY, payload: city});
 export const setType = (type) => ({type: SET_TYPE, payload: type});
-export const setLoaded = (value) => ({type: SET_LOADED, value});
-export const setError = (value, code) => ({type: SET_ERROR, value, code});
+export const setLoaded = (value) => ({type: SET_LOADED, payload: value});
+export const setError = (error) => ({type: SET_ERROR, payload: error});
 
 export const loadHotels = () => (dispatch) => {
   dispatch(setLoaded(false));
@@ -69,11 +63,11 @@ export const loadHotels = () => (dispatch) => {
   sixCitiesApi.getHotels()
     .then((hotels) => {
       dispatch(setHotels(hotels));
-      dispatch(setError(false, null));
+      dispatch(setError(null));
     })
     .catch((err) => {
       dispatch(setHotels([]));
-      dispatch(setError(true, err.code));
+      dispatch(setError(err));
     })
     .finally(() => {
       dispatch(setLoaded(true));
