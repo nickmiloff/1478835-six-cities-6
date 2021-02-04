@@ -13,7 +13,7 @@ const FavoritesLocation = ({city, cards}) => {
         </div>
       </div>
       <div className="favorites__places">
-        {cards.map((card, index) => <Card cardType="favorites" {...card} key={index} />)}
+        {cards.map((card) => <Card cardType="favorites" {...card} key={card.id} />)}
       </div>
     </li>
   );

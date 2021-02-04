@@ -103,7 +103,7 @@ const Offer = ({offer, reviews, nearPlaces}) => {
             <section className="property__reviews reviews">
               <h2 className="reviews__title">Reviews &middot; <span className="reviews__amount">1</span></h2>
               <ul className="reviews__list">
-                {reviews.map((review, index) => <OfferReview {...review} key={index} />)}
+                {reviews.map((review) => <OfferReview {...review} key={review.id} />)}
               </ul>
               <form className="reviews__form form" action="#" method="post">
                 <label className="reviews__label form__label" htmlFor="review">Your review</label>
@@ -160,7 +160,7 @@ const Offer = ({offer, reviews, nearPlaces}) => {
         <section className="near-places places">
           <h2 className="near-places__title">Other places in the neighbourhood</h2>
           <div className="near-places__list places__list">
-            {nearPlaces.map((place, index) => <Card cardType="offer" {...place} key={index} />)}
+            {nearPlaces.map((place) => <Card cardType="offer" {...place} key={place.id} />)}
           </div>
         </section>
       </div>
