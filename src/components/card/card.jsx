@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
 
 const RATING_PER_STAR = 20;
 
@@ -9,9 +8,9 @@ const Card = ({isPremium, previewImage, price, isFavorite, rating, title, id, ty
     <article className="cities__place-card place-card">
       {isPremium && <div className="place-card__mark"><span>Premium</span></div> || ``}
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <Link to={`/offer/${id}`}>
+        <a href={`/offer/${id}`}>
           <img className="place-card__image" src={previewImage} width="260" height="200" alt="Place image" />
-        </Link>
+        </a>
       </div>
       <div className="place-card__info">
         <div className="place-card__price-wrapper">
@@ -33,7 +32,7 @@ const Card = ({isPremium, previewImage, price, isFavorite, rating, title, id, ty
           </div>
         </div>
         <h2 className="place-card__name">
-          <Link to={`/offer/${id}`}>{title}</Link>
+          <a href={`/offer/${id}`}>{title}</a>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>
@@ -43,12 +42,12 @@ const Card = ({isPremium, previewImage, price, isFavorite, rating, title, id, ty
 
 Card.propTypes = {
   isPremium: PropTypes.bool.isRequired,
+  id: PropTypes.number.isRequired,
   previewImage: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   isFavorite: PropTypes.bool.isRequired,
   rating: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
   type: PropTypes.string.isRequired
 };
 
