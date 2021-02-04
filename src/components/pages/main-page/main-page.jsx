@@ -63,7 +63,7 @@ const MainPage = ({cards}) => {
               </ul>
             </form>
             <div className="cities__places-list places__list tabs__content">
-              {cards.map((card, index) => <Card {...card} key={index} />)}
+              {cards.map((card, index) => <Card cardType="main" {...card} key={index} />)}
             </div>
           </section>
           <div className="cities__right-section">
