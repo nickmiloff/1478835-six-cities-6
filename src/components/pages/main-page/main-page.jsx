@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Card from '../card/card';
+import Card from '../../card/card';
 
-const Main = ({cards}) => {
+const MainPage = ({cards}) => {
   return (
     <main className="page__main page__main--index">
       <h1 className="visually-hidden">Cities</h1>
@@ -63,7 +63,7 @@ const Main = ({cards}) => {
               </ul>
             </form>
             <div className="cities__places-list places__list tabs__content">
-              {cards.map((card, index) => <Card {...card} key={index} />)}
+              {cards.map((card) => <Card cardType="main" {...card} key={card.id} />)}
             </div>
           </section>
           <div className="cities__right-section">
@@ -75,8 +75,8 @@ const Main = ({cards}) => {
   );
 };
 
-Main.propTypes = {
+MainPage.propTypes = {
   cards: PropTypes.array.isRequired
 };
 
-export default Main;
+export default MainPage;
