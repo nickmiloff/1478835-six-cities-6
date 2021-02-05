@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
+import Header from '../../header/header';
+import Footer from '../../footer/footer';
 import FavoritesLocation from '../../favorites-location/favorites-location';
 
 const CITIES_LIST = [`Paris`, `Cologne`, `Brussels`, `Amsterdam`, `Hamburg`, `Dusseldorf`];
@@ -8,6 +9,7 @@ const CITIES_LIST = [`Paris`, `Cologne`, `Brussels`, `Amsterdam`, `Hamburg`, `Du
 const FavoritesPage = ({cards}) => {
   return (
     <>
+      <Header />
       <main className="page__main page__main--favorites">
         <div className="page__favorites-container container">
           <section className="favorites">
@@ -24,11 +26,7 @@ const FavoritesPage = ({cards}) => {
           </section>
         </div>
       </main>
-      <footer className="footer container">
-        <Link className="footer__logo-link" to="/">
-          <img className="footer__logo" src="img/logo.svg" alt="6 cities logo" width="64" height="33" />
-        </Link>
-      </footer>
+      <Footer />
     </>
   );
 };
