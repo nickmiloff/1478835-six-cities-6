@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CardList from '../card-list/card-list';
+import CardsList from '../cards-list/cards-list';
 
 const FavoritesLocation = ({city, cards}) => {
   return (
@@ -12,7 +12,7 @@ const FavoritesLocation = ({city, cards}) => {
           </a>
         </div>
       </div>
-      <CardList cards={cards} cardType="favorites" />
+      <CardsList cards={cards} cardType="favorites" />
     </li>
   );
 };
