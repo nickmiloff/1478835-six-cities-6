@@ -1,0 +1,32 @@
+.error-message {
+  min-width: 640px;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 70px;
+  position: fixed;
+  z-index: 9999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.7);
+  background-color: #fff;
+}
+
+.error-message h1 {
+  margin: 0;
+  font-size: 5em;
+  color: #f94e4e;
+}
+
+.error-message p {
+  margin: 0;
+  font-size: 21px;
+}
+
+.error-message button {
+  margin-top: auto;
+}

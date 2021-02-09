@@ -1,0 +1,48 @@
+@keyframes spin {
+  0% { transform: rotate(0deg) }
+  50% { transform: rotate(180deg) }
+  100% { transform: rotate(360deg) }
+}
+
+.loader {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.loader__wrapper {
+  width: 300px;
+  height: 300px;
+  display: inline-block;
+  overflow: hidden;
+  background: none;
+}
+
+.loader__spiner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0;
+}
+
+.loader__spiner div {
+  box-sizing: content-box;
+  position: absolute;
+  animation: spin 1s linear infinite;
+  width: 260px;
+  height: 260px;
+  top: 20px;
+  left: 20px;
+  border-radius: 50%;
+  box-shadow: 0 7px 0 0 #4481c3;
+  transform-origin: 130px 133.5px;
+}
