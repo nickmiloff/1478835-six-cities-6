@@ -11,7 +11,7 @@ const CARD_TYPES = {
 const CardsList = ({cards, cardType}) => {
   return (
     <div className={CARD_TYPES[cardType]}>
-      {cards.map((card) => <Card cardType={cardType} {...card} key={card.id} />)}
+      {cards.map((card) => <Card cardType={cardType} key={card.id} {...card} />)}
     </div>
   );
 };
