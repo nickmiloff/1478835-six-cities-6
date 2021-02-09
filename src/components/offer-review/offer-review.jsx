@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import {reviewPropTypes} from '../../prop-types';
 
 const RATING_PER_STAR = 20;
 
@@ -30,11 +30,6 @@ const OfferReview = ({comment, date, rating, user}) => {
   );
 };
 
-OfferReview.propTypes = {
-  comment: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  rating: PropTypes.number.isRequired,
-  user: PropTypes.object.isRequired
-};
+OfferReview.propTypes = reviewPropTypes;
 
 export default OfferReview;
