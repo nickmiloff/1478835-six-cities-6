@@ -4,7 +4,7 @@ import Header from '../../header/header';
 import OfferReview from '../../offer-review/offer-review';
 import CardsList from '../../cards-list/cards-list';
 import OfferReviewForm from '../../offer-review-form/offer-review-form';
-import {offerPropTypes} from '../../../prop-types';
+import {offerPropTypes} from '../../../prop-types.prop';
 
 const RATING_PER_STAR = 20;
 

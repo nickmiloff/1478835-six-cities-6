@@ -8,17 +8,18 @@ const CARD_TYPES = {
   offer: `near-places__list places__list`
 };
 
-const CardsList = ({cards, cardType}) => {
+const CardsList = ({cards, cardType, chnageActiveCardId = null}) => {
   return (
     <div className={CARD_TYPES[cardType]}>
-      {cards.map((card) => <Card cardType={cardType} key={card.id} {...card} />)}
+      {cards.map((card) => <Card cardType={cardType} key={card.id} {...card} chnageActiveCardId={chnageActiveCardId} />)}
     </div>
   );
 };
 
 CardsList.propTypes = {
   cards: PropTypes.array.isRequired,
-  cardType: PropTypes.string.isRequired
+  cardType: PropTypes.string.isRequired,
+  chnageActiveCardId: PropTypes.func
 };
 
 export default CardsList;
