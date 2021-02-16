@@ -73,7 +73,7 @@ const Map = ({activeLocation, cards, activeCardId}) => {
     setMarkers(map.current, cards, activeCardId);
   }, [activeCardId]);
 
-  return <div id="map" style={STYLE}></div>;
+  return <div id="map" style={STYLE} ref={map}></div>;
 };
 
 Map.propTypes = {
