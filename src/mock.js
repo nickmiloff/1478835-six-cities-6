@@ -10,6 +10,11 @@ export const cards = [
     type: `room`,
     city: {
       name: `Hamburg`
+    },
+    location: {
+      lat: 52.3909553943508,
+      lon: 4.85309666406198,
+      zoom: 8
     }
   },
   {
@@ -23,6 +28,11 @@ export const cards = [
     type: `room`,
     city: {
       name: `Paris`
+    },
+    location: {
+      lat: 52.369553943508,
+      lon: 4.85309666406198,
+      zoom: 8
     }
   },
   {
@@ -36,6 +46,11 @@ export const cards = [
     type: `apartment`,
     city: {
       name: `Paris`
+    },
+    location: {
+      lat: 52.3909553943508,
+      lon: 4.929309666406198,
+      zoom: 8
     }
   }
 ];

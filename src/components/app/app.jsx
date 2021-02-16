@@ -8,7 +8,7 @@ import MainPage from '../pages/main-page/main-page';
 import NotFoundPage from '../pages/not-found-page/not-found-page';
 
 const ROUTES = {
-  offer: `/offer/:id`,
+  offer: `/offer`,
   favorites: `/favorites`,
   login: `/login`,
   main: `/`
@@ -19,7 +19,7 @@ const App = ({cards, offer, reviews}) => {
     <div className="page page--gray page--main">
       <BrowserRouter>
         <Switch>
-          <Route exact path={ROUTES.offer}>
+          <Route exact path={`${ROUTES.offer}/:id`}>
             <OfferPage offer={offer} reviews={reviews} nearPlaces={cards} />
           </Route>
           <Route exact path={ROUTES.favorites}>

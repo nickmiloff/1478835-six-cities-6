@@ -4,10 +4,12 @@ import Header from '../../header/header';
 import Locations from '../../locations/locations';
 import CardsList from '../../cards-list/cards-list';
 import PlacesSorting from '../../places-sorting/places-sorting';
+import Map from '../../map/map';
 
 const MainPage = ({cards}) => {
   const [sortingType, setSortingType] = useState(`Popular`);
   const [location, setLocation] = useState(`Amsterdam`);
+  const [activeCardId, setActiveCardId] = useState(null);
 
   return (
     <>
@@ -23,10 +25,12 @@ const MainPage = ({cards}) => {
               <h2 className="visually-hidden">Places</h2>
               <b className="places__found">{cards.length} places to stay in Amsterdam</b>
               <PlacesSorting activeOption={sortingType} changeOption={setSortingType} />
-              <CardsList cards={cards} cardType="main" />
+              <CardsList cards={cards} cardType="main" chnageActiveCardId={setActiveCardId} />
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map"></section>
+              <section className="cities__map map">
+                <Map cards={cards} activeLocation={location} activeCardId={activeCardId} />
+              </section>
             </div>
           </div>
         </div>

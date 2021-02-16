@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {cardPropTypes} from '../../prop-types';
+import {cardPropTypes} from '../../prop-types.prop';
 
 const RATING_PER_STAR = 20;
 const CARD_TYPES = {
@@ -33,11 +33,23 @@ const CARD_TYPES = {
   }
 };
 
-const Card = ({isPremium, previewImage, price, isFavorite, rating, title, id, type, cardType}) => {
+const Card = ({isPremium, previewImage, price, isFavorite, rating, title, id, type, cardType, chnageActiveCardId}) => {
   const cardTypeOptions = CARD_TYPES[cardType];
+  let hoverHandlers = chnageActiveCardId ?
+    {
+      onMouseEnter: () => {
+        chnageActiveCardId(id);
+      },
+      onMouseLeave: () => {
+        chnageActiveCardId(null);
+      }
+    } :
+    {};
 
   return (
-    <article className={`${cardTypeOptions.articleClass}place-card`}>
+    <article
+      className={`${cardTypeOptions.articleClass}place-card`}
+      {...hoverHandlers}>
       {isPremium && <div className="place-card__mark"><span>Premium</span></div> || ``}
       <div className={`${cardTypeOptions.image.class}__image-wrapper place-card__image-wrapper`}>
         <Link to={`/offer/${id}`}>

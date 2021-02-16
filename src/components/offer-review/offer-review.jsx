@@ -1,5 +1,5 @@
 import React from 'react';
-import {reviewPropTypes} from '../../prop-types';
+import {reviewPropTypes} from '../../prop-types.prop';
 
 const RATING_PER_STAR = 20;
 

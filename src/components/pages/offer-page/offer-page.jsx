@@ -4,7 +4,7 @@ import Header from '../../header/header';
 import OfferReview from '../../offer-review/offer-review';
 import CardsList from '../../cards-list/cards-list';
 import OfferReviewForm from '../../offer-review-form/offer-review-form';
-import {offerPropTypes} from '../../../prop-types';
+import {offerPropTypes} from '../../../prop-types.prop';
 
 const RATING_PER_STAR = 20;
 
@@ -108,7 +108,7 @@ const Offer = ({offer, reviews, nearPlaces}) => {
               <section className="property__reviews reviews">
                 <h2 className="reviews__title">Reviews &middot; <span className="reviews__amount">1</span></h2>
                 <ul className="reviews__list">
-                  {reviews.map((review) => <OfferReview {...review} key={review.id} />)}
+                  {reviews.map((review) => <OfferReview key={review.id} {...review} />)}
                 </ul>
                 <OfferReviewForm />
               </section>
