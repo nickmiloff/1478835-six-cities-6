@@ -5,6 +5,7 @@ import OfferReview from '../../offer-review/offer-review';
 import CardsList from '../../cards-list/cards-list';
 import OfferReviewForm from '../../offer-review-form/offer-review-form';
 import {offerPropTypes} from '../../../prop-types.prop';
+import Map from '../../map/map';
 
 const RATING_PER_STAR = 20;
 
@@ -26,7 +27,8 @@ const Offer = ({offer, reviews, nearPlaces}) => {
       isPro: false,
       name: `unknown`
     },
-    description = ``
+    description = ``,
+    id
   } = offer;
 
   return (
@@ -114,7 +116,9 @@ const Offer = ({offer, reviews, nearPlaces}) => {
               </section>
             </div>
           </div>
-          <section className="property__map map"></section>
+          <section className="property__map map">
+            <Map cards={[...nearPlaces.slice(0, 3), offer]} activeLocation="Amsterdam" activeCardId={id} />
+          </section>
         </section>
         <div className="container">
           <section className="near-places places">

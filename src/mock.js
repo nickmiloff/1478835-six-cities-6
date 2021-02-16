@@ -72,6 +72,7 @@ export const offer = {
     `https://assets.htmlacademy.ru/intensives/javascript-3/hotel/12.jpg`,
     `https://assets.htmlacademy.ru/intensives/javascript-3/hotel/1.jpg`
   ],
+  previewImage: `https://assets.htmlacademy.ru/intensives/javascript-3/hotel/14.jpg`,
   isPremium: false,
   title: `Amazing and Extremely Central Flat`,
   isFavorite: false,
@@ -96,7 +97,13 @@ export const offer = {
     isPro: true,
     name: `Angelina`
   },
-  description: `Peaceful studio in the most wanted area in town. Quiet house Near of everything. Completely renovated. Lovely neighbourhood, lot of trendy shops, restaurants and bars in a walking distance.`
+  description: `Peaceful studio in the most wanted area in town. Quiet house Near of everything. Completely renovated. Lovely neighbourhood, lot of trendy shops, restaurants and bars in a walking distance.`,
+  id: 4,
+  location: {
+    lat: 52.3809553943508,
+    lon: 4.939309666406198,
+    zoom: 8
+  }
 };
 
 export const reviews = [

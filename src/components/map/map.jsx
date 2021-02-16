@@ -16,13 +16,7 @@ const STYLE = {
 const INITIAL_SETTINGS = {
   zoom: 12,
   zoomControl: false,
-  marker: true,
-  layers: [
-    leaflet
-      .tileLayer(`https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png`, {
-        attribution: `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>`
-      })
-  ]
+  marker: true
 };
 
 const ICON = leaflet.icon({
@@ -60,6 +54,12 @@ const Map = ({activeLocation, cards, activeCardId}) => {
       center: currentCity,
       ...INITIAL_SETTINGS
     });
+
+    leaflet
+      .tileLayer(`https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png`, {
+        attribution: `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>`
+      })
+      .addTo(map.current);
 
     setMarkers(map.current, cards, activeCardId);
   }, []);
