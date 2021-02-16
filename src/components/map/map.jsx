@@ -62,6 +62,10 @@ const Map = ({activeLocation, cards, activeCardId}) => {
       .addTo(map.current);
 
     setMarkers(map.current, cards, activeCardId);
+
+    return () => {
+      map.current.remove();
+    };
   }, []);
 
   useEffect(() => {
