@@ -4,6 +4,11 @@ import leaflet from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import {cardPropTypes} from '../../prop-types.prop';
 
+const MAP_TYPES = {
+  main: `cities__map`,
+  offer: `property__map`
+};
+
 const CITIES = {
   Amsterdam: [52.38333, 4.9]
 };
@@ -45,9 +50,10 @@ const removeMarkers = (map) => {
   });
 };
 
-const Map = ({activeLocation, cards, activeCardId}) => {
+const Map = ({activeLocation, cards, activeCardId, type}) => {
   const map = useRef();
   const currentCity = CITIES[activeLocation];
+  const currentType = MAP_TYPES[type];
 
   useEffect(() => {
     map.current = leaflet.map(`map`, {
@@ -73,13 +79,18 @@ const Map = ({activeLocation, cards, activeCardId}) => {
     setMarkers(map.current, cards, activeCardId);
   }, [activeCardId]);
 
-  return <div id="map" style={STYLE} ref={map}></div>;
+  return (
+    <section className={`${currentType} map`}>
+      <div id="map" style={STYLE} ref={map}></div>
+    </section>
+  );
 };
 
 Map.propTypes = {
   activeLocation: PropTypes.string.isRequired,
   cards: PropTypes.arrayOf(PropTypes.shape(cardPropTypes)),
-  activeCardId: PropTypes.number
+  activeCardId: PropTypes.number,
+  type: PropTypes.string.isRequired
 };
 
 export default Map;

@@ -6,7 +6,7 @@ const REVIEW_SIZING = {
   max: 300
 };
 
-const OfferReviewForm = () => {
+const ReviewForm = () => {
   const [rating, setRating] = useState(null);
   const [review, setReview] = useState(``);
 
@@ -57,4 +57,4 @@ const OfferReviewForm = () => {
   );
 };
 
-export default OfferReviewForm;
+export default ReviewForm;

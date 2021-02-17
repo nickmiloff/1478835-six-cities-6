@@ -28,9 +28,7 @@ const MainPage = ({cards}) => {
               <CardsList cards={cards} cardType="main" chnageActiveCardId={setActiveCardId} />
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map">
-                <Map cards={cards} activeLocation={location} activeCardId={activeCardId} />
-              </section>
+              <Map cards={cards} activeLocation={location} activeCardId={activeCardId} type="main" />
             </div>
           </div>
         </div>
