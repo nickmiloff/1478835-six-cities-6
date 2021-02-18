@@ -10,7 +10,12 @@ const MAP_TYPES = {
 };
 
 const CITIES = {
-  Amsterdam: [52.38333, 4.9]
+  Amsterdam: [52.3833, 4.9044],
+  Paris: [48.8589, 2.3469],
+  Cologne: [50.9593, 6.9695],
+  Brussels: [50.8552, 4.3753],
+  Hamburg: [53.5503, 10.0006],
+  Dusseldorf: [51.2387, 6.8143]
 };
 
 const STYLE = {
@@ -72,7 +77,7 @@ const Map = ({activeLocation, cards, activeCardId, type}) => {
     return () => {
       map.current.remove();
     };
-  }, []);
+  }, [activeLocation]);
 
   useEffect(() => {
     removeMarkers(map.current);

@@ -1,5 +1,8 @@
 import React, {useState} from 'react';
+import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+import {getType} from '../../store/main/selectors';
+import {setType} from '../../store/main/actions';
 
 const OPTIONS = [`Popular`, `Price: low to high`, `Price: high to low`, `Top rated first`];
 
@@ -43,4 +46,12 @@ PlacesSorting.propTypes = {
   changeOption: PropTypes.func.isRequired
 };
 
-export default PlacesSorting;
+const mapStateToProps = (state) => ({
+  activeOption: getType(state)
+});
+
+const mapDispatchToProps = {
+  changeOption: setType
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(PlacesSorting);
