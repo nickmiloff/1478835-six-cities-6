@@ -4,6 +4,11 @@ import leaflet from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import {cardPropTypes} from '../../prop-types.prop';
 
+const MAP_TYPES = {
+  main: `cities__map`,
+  offer: `property__map`
+};
+
 const CITIES = {
   Amsterdam: [52.38333, 4.9]
 };
@@ -16,13 +21,7 @@ const STYLE = {
 const INITIAL_SETTINGS = {
   zoom: 12,
   zoomControl: false,
-  marker: true,
-  layers: [
-    leaflet
-      .tileLayer(`https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png`, {
-        attribution: `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>`
-      })
-  ]
+  marker: true
 };
 
 const ICON = leaflet.icon({
@@ -51,9 +50,10 @@ const removeMarkers = (map) => {
   });
 };
 
-const Map = ({activeLocation, cards, activeCardId}) => {
+const Map = ({activeLocation, cards, activeCardId, type}) => {
   const map = useRef();
   const currentCity = CITIES[activeLocation];
+  const currentType = MAP_TYPES[type];
 
   useEffect(() => {
     map.current = leaflet.map(`map`, {
@@ -61,7 +61,17 @@ const Map = ({activeLocation, cards, activeCardId}) => {
       ...INITIAL_SETTINGS
     });
 
+    leaflet
+      .tileLayer(`https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png`, {
+        attribution: `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>`
+      })
+      .addTo(map.current);
+
     setMarkers(map.current, cards, activeCardId);
+
+    return () => {
+      map.current.remove();
+    };
   }, []);
 
   useEffect(() => {
@@ -69,13 +79,18 @@ const Map = ({activeLocation, cards, activeCardId}) => {
     setMarkers(map.current, cards, activeCardId);
   }, [activeCardId]);
 
-  return <div id="map" style={STYLE}></div>;
+  return (
+    <section className={`${currentType} map`}>
+      <div id="map" style={STYLE} ref={map}></div>
+    </section>
+  );
 };
 
 Map.propTypes = {
   activeLocation: PropTypes.string.isRequired,
   cards: PropTypes.arrayOf(PropTypes.shape(cardPropTypes)),
-  activeCardId: PropTypes.number
+  activeCardId: PropTypes.number,
+  type: PropTypes.string.isRequired
 };
 
 export default Map;

@@ -8,7 +8,7 @@ const CARD_TYPES = {
   offer: `near-places__list places__list`
 };
 
-const CardsList = ({cards, cardType, chnageActiveCardId = null}) => {
+const CardsList = ({cards, cardType, chnageActiveCardId = () => {}}) => {
   return (
     <div className={CARD_TYPES[cardType]}>
       {cards.map((card) => <Card cardType={cardType} key={card.id} {...card} chnageActiveCardId={chnageActiveCardId} />)}

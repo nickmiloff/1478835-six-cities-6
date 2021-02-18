@@ -3,7 +3,7 @@ import {reviewPropTypes} from '../../prop-types.prop';
 
 const RATING_PER_STAR = 20;
 
-const OfferReview = ({comment, date, rating, user}) => {
+const Review = ({comment, date, rating, user}) => {
   return (
     <li className="reviews__item">
       <div className="reviews__user user">
@@ -30,6 +30,6 @@ const OfferReview = ({comment, date, rating, user}) => {
   );
 };
 
-OfferReview.propTypes = reviewPropTypes;
+Review.propTypes = reviewPropTypes;
 
-export default OfferReview;
+export default Review;
