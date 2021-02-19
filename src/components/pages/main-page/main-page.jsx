@@ -1,44 +1,42 @@
-import React, {useState} from 'react';
+import React from 'react';
+import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import Header from '../../header/header';
 import Locations from '../../locations/locations';
-import CardsList from '../../cards-list/cards-list';
-import PlacesSorting from '../../places-sorting/places-sorting';
-import Map from '../../map/map';
+import {getCards, getLocation} from '../../../store/main/selectors';
+import {setLocation} from '../../../store/main/actions';
+import Cities from '../../cities/cities';
 
-const MainPage = ({cards}) => {
-  const [sortingType, setSortingType] = useState(`Popular`);
-  const [location, setLocation] = useState(`Amsterdam`);
-  const [activeCardId, setActiveCardId] = useState(null);
+const MainPage = ({location, cards, changeLocation}) => {
+  const isEmpty = !cards.length;
 
   return (
     <>
       <Header />
-      <main className="page__main page__main--index">
+      <main className={`page__main page__main--index${isEmpty && ` page__main--index-empty` || ``}`}>
         <h1 className="visually-hidden">Cities</h1>
         <div className="tabs">
-          <Locations activeLocation={location} changeLocation={setLocation} />
+          <Locations activeLocation={location} changeLocation={changeLocation} />
         </div>
-        <div className="cities">
-          <div className="cities__places-container container">
-            <section className="cities__places places">
-              <h2 className="visually-hidden">Places</h2>
-              <b className="places__found">{cards.length} places to stay in Amsterdam</b>
-              <PlacesSorting activeOption={sortingType} changeOption={setSortingType} />
-              <CardsList cards={cards} cardType="main" chnageActiveCardId={setActiveCardId} />
-            </section>
-            <div className="cities__right-section">
-              <Map cards={cards} activeLocation={location} activeCardId={activeCardId} type="main" />
-            </div>
-          </div>
-        </div>
+        <Cities cards={cards} location={location} isEmpty={isEmpty} />
       </main>
     </>
   );
 };
 
 MainPage.propTypes = {
-  cards: PropTypes.array.isRequired
+  location: PropTypes.string.isRequired,
+  cards: PropTypes.array.isRequired,
+  changeLocation: PropTypes.func.isRequired
 };
 
-export default MainPage;
+const mapStateToProps = (state) => ({
+  location: getLocation(state),
+  cards: getCards(state)
+});
+
+const mapDispatchToProps = {
+  changeLocation: setLocation
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainPage);

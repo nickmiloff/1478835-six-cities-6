@@ -12,7 +12,7 @@ const Locations = ({activeLocation, changeLocation}) => {
             <a
               className={`locations__item-link tabs__item${location === activeLocation && ` tabs__item--active` || ``}`}
               onClick={() => {
-                changeLocation(() => location);
+                changeLocation(location);
               }}>
               <span>{location}</span>
             </a>
