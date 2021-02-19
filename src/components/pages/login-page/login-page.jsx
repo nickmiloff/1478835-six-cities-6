@@ -3,7 +3,7 @@ import Header from '../../header/header';
 
 const LoginPage = () => {
   return (
-    <>
+    <div className="page page--gray page--login">
       <Header />
       <main className="page__main page__main--login">
         <div className="page__login-container container">
@@ -30,7 +30,7 @@ const LoginPage = () => {
           </section>
         </div>
       </main>
-    </>
+    </div>
   );
 };
 

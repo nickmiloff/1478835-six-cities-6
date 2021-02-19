@@ -1,33 +1,27 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+import {getCards} from '../../../store/favorites/selectors';
 import Header from '../../header/header';
 import Footer from '../../footer/footer';
-import FavoritesLocation from '../../favorites-location/favorites-location';
-
-const CITIES_LIST = [`Paris`, `Cologne`, `Brussels`, `Amsterdam`, `Hamburg`, `Dusseldorf`];
+import FavoritesEmpty from '../../favorites-empty/favorites-empty';
+import Favorites from '../../favorites/favorites';
 
 const FavoritesPage = ({cards}) => {
+  const isEmpty = !cards.length;
+
   return (
-    <>
+    <div className={`page${isEmpty && ` page--favorites-empty` || ``}`}>
       <Header />
-      <main className="page__main page__main--favorites">
+      <main className={`page__main page__main--favorites${isEmpty && ` page__main--favorites-empty` || ``}`}>
         <div className="page__favorites-container container">
-          <section className="favorites">
-            <h1 className="favorites__title">Saved listing</h1>
-            <ul className="favorites__list">
-              {
-                CITIES_LIST.map(
-                    (city, index) => {
-                      const filteredCards = cards.filter((card) => card.city.name === city);
-                      return filteredCards.length < 1 ? `` : <FavoritesLocation city={city} cards={filteredCards} key={index} />;
-                    })
-              }
-            </ul>
-          </section>
+          {isEmpty
+            && <FavoritesEmpty />
+            || <Favorites cards={cards} />}
         </div>
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 
@@ -35,4 +29,8 @@ FavoritesPage.propTypes = {
   cards: PropTypes.array.isRequired
 };
 
-export default FavoritesPage;
+const mapStateToProps = (state) => ({
+  cards: getCards(state)
+});
+
+export default connect(mapStateToProps)(FavoritesPage);

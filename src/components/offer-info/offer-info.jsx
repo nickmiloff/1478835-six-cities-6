@@ -6,7 +6,7 @@ import Map from '../map/map';
 
 const RATING_PER_STAR = 20;
 
-const OfferInfo = ({offer, reviews, mapPlaces}) => {
+const OfferInfo = ({offer, reviews, mapPlaces, isAuth = false}) => {
   const {images, isPremium, title, isFavorite, rating, type, bedrooms, maxAdults, price, goods, host, description, id} = offer;
 
   return (
@@ -82,10 +82,10 @@ const OfferInfo = ({offer, reviews, mapPlaces}) => {
               </p>
             </div>
           </div>
-          <Reviews reviews={reviews} withForm={true} />
+          <Reviews reviews={reviews} withForm={isAuth} />
         </div>
       </div>
-      <Map cards={[...mapPlaces.slice(0, 3), offer]} activeLocation="Amsterdam" activeCardId={id} type="offer" />
+      <Map cards={[...mapPlaces, offer]} activeLocation="Amsterdam" activeCardId={id} type="offer" />
     </section>
   );
 };
@@ -93,7 +93,8 @@ const OfferInfo = ({offer, reviews, mapPlaces}) => {
 OfferInfo.propTypes = {
   offer: PropTypes.shape(offerPropTypes).isRequired,
   reviews: PropTypes.array.isRequired,
-  mapPlaces: PropTypes.array.isRequired
+  mapPlaces: PropTypes.array.isRequired,
+  isAuth: PropTypes.bool
 };
 
 export default OfferInfo;
