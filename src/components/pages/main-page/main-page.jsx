@@ -1,17 +1,17 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import Header from '../../header/header';
-import Locations from '../../locations/locations';
 import {getCards, getLocation} from '../../../store/main/selectors';
 import {setLocation} from '../../../store/main/actions';
+import Header from '../../header/header';
+import Locations from '../../locations/locations';
 import Cities from '../../cities/cities';
 
 const MainPage = ({location, cards, changeLocation}) => {
   const isEmpty = !cards.length;
 
   return (
-    <>
+    <div className="page page--gray page--main">
       <Header />
       <main className={`page__main page__main--index${isEmpty && ` page__main--index-empty` || ``}`}>
         <h1 className="visually-hidden">Cities</h1>
@@ -20,7 +20,7 @@ const MainPage = ({location, cards, changeLocation}) => {
         </div>
         <Cities cards={cards} location={location} isEmpty={isEmpty} />
       </main>
-    </>
+    </div>
   );
 };
 

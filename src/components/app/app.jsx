@@ -1,6 +1,5 @@
 import React from 'react';
 import {Provider} from 'react-redux';
-import PropTypes from 'prop-types';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import store from '../../store/store';
 import OfferPage from '../pages/offer-page/offer-page';
@@ -16,38 +15,20 @@ const ROUTES = {
   main: `/`
 };
 
-const App = ({cards, offer, reviews}) => {
+const App = () => {
   return (
     <Provider store={store}>
-      <div className="page page--gray page--main">
-        <BrowserRouter>
-          <Switch>
-            <Route exact path={`${ROUTES.offer}/:id`}>
-              <OfferPage offer={offer} reviews={reviews} nearPlaces={cards} />
-            </Route>
-            <Route exact path={ROUTES.favorites}>
-              <FavoritesPage cards={cards} />
-            </Route>
-            <Route exact path={ROUTES.login}>
-              <LoginPage />
-            </Route>
-            <Route exact path={ROUTES.main}>
-              <MainPage cards={cards} />
-            </Route>
-            <Route>
-              <NotFoundPage />
-            </Route>
-          </Switch>
-        </BrowserRouter>
-      </div>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path={`${ROUTES.offer}/:id`} component={OfferPage} />
+          <Route exact path={ROUTES.favorites} component={FavoritesPage} />
+          <Route exact path={ROUTES.login} component={LoginPage} />
+          <Route exact path={ROUTES.main} component={MainPage} />
+          <Route component={NotFoundPage} />
+        </Switch>
+      </BrowserRouter>
     </Provider>
   );
-};
-
-App.propTypes = {
-  cards: PropTypes.array.isRequired,
-  offer: PropTypes.object.isRequired,
-  reviews: PropTypes.array.isRequired
 };
 
 export default App;

@@ -18,7 +18,7 @@ const mainReducer = (state = initialState, action) => {
     case types.SET_CARDS:
       return {
         ...state,
-        cards: action.payload
+        cards: [...action.payload]
       };
 
     case types.SET_TYPE:

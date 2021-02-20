@@ -13,13 +13,13 @@ const styles = {
 
 const NotFoundPage = () => {
   return (
-    <>
+    <div className="page page--gray page--favorites-empty">
       <Header />
       <main style={styles}>
         <h1>404 Page not found</h1>
         <Link to="/">Home page</Link>
       </main>
-    </>
+    </div>
   );
 };
 
