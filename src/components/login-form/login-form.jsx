@@ -23,7 +23,7 @@ const LoginForm = ({onSubmit}) => {
           type="email"
           name="email"
           placeholder="Email"
-          required=""
+          required={true}
           autoComplete="on"
           value={email}
           onChange={(evt) => {
@@ -37,7 +37,7 @@ const LoginForm = ({onSubmit}) => {
           type="password"
           name="password"
           placeholder="Password"
-          required=""
+          required={true}
           autoComplete="on"
           value={password}
           onChange={(evt) => {
