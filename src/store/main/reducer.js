@@ -1,10 +1,10 @@
 import * as types from './types';
-import {cards} from '../../mock';
 
 const initialState = {
   location: `Paris`,
-  cards: [...cards],
-  type: `Price: high to low`
+  cards: [],
+  type: `Popular`,
+  loaded: false
 };
 
 const mainReducer = (state = initialState, action) => {
@@ -25,6 +25,12 @@ const mainReducer = (state = initialState, action) => {
       return {
         ...state,
         type: action.payload
+      };
+
+    case types.SET_LOADED:
+      return {
+        ...state,
+        loaded: action.payload
       };
 
     default:

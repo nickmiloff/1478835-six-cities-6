@@ -3,6 +3,7 @@ import {createSelector} from 'reselect';
 export const getLocation = (state) => state.main.location;
 export const getAllCards = (state) => state.main.cards;
 export const getType = (state) => state.main.type;
+export const getIsLoaded = (state) => state.main.loaded;
 
 export const getCards = createSelector(
     [getLocation, getAllCards, getType],

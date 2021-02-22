@@ -46,3 +46,11 @@ export const cardPropTypes = {
     name: PropTypes.string.isRequired
   })
 };
+
+export const authInfoPropTypes = {
+  avatarUrl: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  isPro: PropTypes.bool.isRequired,
+  name: PropTypes.string.isRequired
+};

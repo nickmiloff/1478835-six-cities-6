@@ -42,7 +42,10 @@ const ACTIVE_ICON = leaflet.icon({
 const setMarkers = (map, cards, activeCardId) => {
   cards.forEach((card) => {
     leaflet
-      .marker(card.location, {icon: card.id === activeCardId ? ACTIVE_ICON : ICON})
+      .marker({
+        lat: card.location.latitude,
+        lon: card.location.longitude
+      }, {icon: card.id === activeCardId ? ACTIVE_ICON : ICON})
       .addTo(map);
   });
 };
@@ -77,7 +80,7 @@ const Map = ({activeLocation, cards, activeCardId, type}) => {
     return () => {
       map.current.remove();
     };
-  }, [activeLocation]);
+  }, [JSON.stringify(cards)]);
 
   useEffect(() => {
     removeMarkers(map.current);

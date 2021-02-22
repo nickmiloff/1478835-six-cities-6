@@ -1,7 +1,12 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
+import {getIsAuth} from '../../store/app/selectors';
+import HeaderProfile from '../header-profile/header-profile';
+import HeaderNoLogin from '../header-no-login/header-no-login';
 
-const Header = () => {
+const Header = ({isAuth}) => {
   return (
     <header className="header">
       <div className="container">
@@ -13,13 +18,7 @@ const Header = () => {
           </div>
           <nav className="header__nav">
             <ul className="header__nav-list">
-              <li className="header__nav-item user">
-                <Link className="header__nav-link header__nav-link--profile" to="/favorites">
-                  <div className="header__avatar-wrapper user__avatar-wrapper">
-                  </div>
-                  <span className="header__user-name user__name">Oliver.conner@gmail.com</span>
-                </Link>
-              </li>
+              {isAuth && <HeaderProfile /> || <HeaderNoLogin />}
             </ul>
           </nav>
         </div>
@@ -28,4 +27,12 @@ const Header = () => {
   );
 };
 
-export default Header;
+Header.propTypes = {
+  isAuth: PropTypes.bool.isRequired
+};
+
+const mapStateToProps = (state) => ({
+  isAuth: getIsAuth(state)
+});
+
+export default connect(mapStateToProps)(Header);
