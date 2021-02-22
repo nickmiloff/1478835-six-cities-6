@@ -12,10 +12,10 @@ const MAP_TYPES = {
 const CITIES = {
   Amsterdam: [52.3833, 4.9044],
   Paris: [48.8589, 2.3469],
-  Cologne: [50.9593, 6.9695],
-  Brussels: [50.8552, 4.3753],
+  Cologne: [50.9293, 6.9595],
+  Brussels: [50.8552, 4.3453],
   Hamburg: [53.5503, 10.0006],
-  Dusseldorf: [51.2387, 6.8143]
+  Dusseldorf: [51.2287, 6.7743]
 };
 
 const STYLE = {
@@ -80,6 +80,12 @@ const Map = ({activeLocation, cards, activeCardId, type}) => {
     return () => {
       map.current.remove();
     };
+  }, []);
+
+  useEffect(() => {
+    map.current.flyTo(new leaflet.LatLng(...currentCity), INITIAL_SETTINGS.zoom);
+    removeMarkers(map.current);
+    setMarkers(map.current, cards, activeCardId);
   }, [JSON.stringify(cards)]);
 
   useEffect(() => {
