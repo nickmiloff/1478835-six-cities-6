@@ -9,6 +9,8 @@ import MainPage from '../pages/main-page/main-page';
 import NotFoundPage from '../pages/not-found-page/not-found-page';
 import PrivateRoute from '../private-route/private-route';
 import browserHistory from '../../browser-history';
+import {checkAuth} from '../../store/app/operations';
+import {loadOffers} from '../../store/main/operations';
 
 const ROUTES = {
   offer: `/offer`,
@@ -18,6 +20,9 @@ const ROUTES = {
 };
 
 const App = () => {
+  store.dispatch(checkAuth());
+  store.dispatch(loadOffers());
+
   return (
     <Provider store={store}>
       <BrowserRouter history={browserHistory}>

@@ -2,11 +2,16 @@ import React from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
-import {getIsAuth} from '../../store/app/selectors';
-import HeaderProfile from '../header-profile/header-profile';
-import HeaderNoLogin from '../header-no-login/header-no-login';
+import {authInfoPropTypes} from '../../prop-types.prop';
+import {getIsAuth, getUser} from '../../store/app/selectors';
+import {logout} from '../../store/app/operations';
 
-const Header = ({isAuth}) => {
+const styles = {
+  border: `none`,
+  backgroundColor: `transparent`
+};
+
+const Header = ({isAuth, user, onLogout}) => {
   return (
     <header className="header">
       <div className="container">
@@ -18,7 +23,21 @@ const Header = ({isAuth}) => {
           </div>
           <nav className="header__nav">
             <ul className="header__nav-list">
-              {isAuth && <HeaderProfile /> || <HeaderNoLogin />}
+              <li className="header__nav-item user">
+                <Link className="header__nav-link header__nav-link--profile" to={isAuth && `/favorites` || `/login`}>
+                  <div
+                    className="header__avatar-wrapper user__avatar-wrapper"
+                    style={isAuth && {backgroundImage: user.avatarUrl} || {}}></div>
+                  <span className={isAuth && `header__user-name user__name` || `header__login`}>{isAuth && user.email || `Sign in`}</span>
+                </Link>
+              </li>
+              {isAuth &&
+                <li className="header__nav-item user">
+                  <button className="header__nav-link header__nav-link--profile" style={styles} onClick={() => onLogout()}>
+                    <span className="header__login">Logout</span>
+                  </button>
+                </li>
+              }
             </ul>
           </nav>
         </div>
@@ -28,11 +47,18 @@ const Header = ({isAuth}) => {
 };
 
 Header.propTypes = {
-  isAuth: PropTypes.bool.isRequired
+  isAuth: PropTypes.bool.isRequired,
+  user: PropTypes.shape(authInfoPropTypes),
+  onLogout: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => ({
-  isAuth: getIsAuth(state)
+  isAuth: getIsAuth(state),
+  user: getUser(state)
 });
 
-export default connect(mapStateToProps)(Header);
+const mapDispatchToProps = {
+  onLogout: logout
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

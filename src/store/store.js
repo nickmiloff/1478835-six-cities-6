@@ -7,8 +7,6 @@ import favoritesReducer from './favorites/reducer';
 import offerReducer from './offer/reducer';
 import appReducer from './app/reducer';
 import {setAuth} from './app/actions';
-import {checkAuth} from './app/operations';
-import {loadOffers} from './main/operations';
 import {redirect} from './middlewares/redirect';
 
 const reducers = combineReducers({
@@ -29,8 +27,5 @@ const store = createStore(
         applyMiddleware(redirect)
     )
 );
-
-store.dispatch(checkAuth());
-store.dispatch(loadOffers());
 
 export default store;
