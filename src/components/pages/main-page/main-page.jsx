@@ -1,11 +1,13 @@
 import React from 'react';
+import {compose} from 'redux';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import {getCards, getLocation} from '../../../store/main/selectors';
+import {getCards, getIsLoaded, getLocation} from '../../../store/main/selectors';
 import {setLocation} from '../../../store/main/actions';
 import Header from '../../header/header';
 import Locations from '../../locations/locations';
 import Cities from '../../cities/cities';
+import withLoading from '../../../hocs/withLoaded';
 
 const MainPage = ({location, cards, changeLocation}) => {
   const isEmpty = !cards.length;
@@ -27,16 +29,21 @@ const MainPage = ({location, cards, changeLocation}) => {
 MainPage.propTypes = {
   location: PropTypes.string.isRequired,
   cards: PropTypes.array.isRequired,
+  isLoaded: PropTypes.bool.isRequired,
   changeLocation: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => ({
   location: getLocation(state),
-  cards: getCards(state)
+  cards: getCards(state),
+  isLoaded: getIsLoaded(state)
 });
 
 const mapDispatchToProps = {
   changeLocation: setLocation
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(MainPage);
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps),
+    withLoading
+)(MainPage);

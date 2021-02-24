@@ -3,8 +3,8 @@ export const cards = [
     city: {
       name: `Hamburg`,
       location: {
-        lat: 53.550341,
-        lon: 10.000654,
+        latitude: 53.550341,
+        longitude: 10.000654,
         zoom: 13,
       },
     },
@@ -48,8 +48,8 @@ export const cards = [
     description:
       `I rent out a very sunny and bright apartment only 7 minutes walking distance to the metro station. The apartment has a spacious living room with a kitchen, one bedroom and a bathroom with mit bath. A terrace can be used in summer.`,
     location: {
-      lat: 53.558341000000006,
-      lon: 10.001654,
+      latitude: 53.558341000000006,
+      longitude: 10.001654,
       zoom: 16,
     },
     id: 1,
@@ -63,8 +63,8 @@ export const cards = [
     city: {
       name: `Paris`,
       location: {
-        lat: 48.85661,
-        lon: 2.351499,
+        latitude: 48.85661,
+        longitude: 2.351499,
         zoom: 13,
       },
     },
@@ -104,8 +104,8 @@ export const cards = [
     description:
       `Peaceful studio in the most wanted area in town. Quiet house Near of everything. Completely renovated. Lovely neighbourhood, lot of trendy shops, restaurants and bars in a walking distance.`,
     location: {
-      lat: 48.85761,
-      lon: 2.358499,
+      latitude: 48.85761,
+      longitude: 2.358499,
       zoom: 16,
     },
     id: 2,
@@ -119,8 +119,8 @@ export const cards = [
     city: {
       name: `Cologne`,
       location: {
-        lat: 50.938361,
-        lon: 6.959974,
+        latitude: 50.938361,
+        longitude: 6.959974,
         zoom: 13,
       },
     },
@@ -167,8 +167,8 @@ export const cards = [
     description:
       `Design interior in most sympathetic area! Complitely renovated, well-equipped, cosy studio in idyllic, over 100 years old wooden house. Calm street, fast connection to center and airport.`,
     location: {
-      lat: 50.917361,
-      lon: 6.977974,
+      latitude: 50.917361,
+      longitude: 6.977974,
       zoom: 16,
     },
     id: 3,
@@ -182,8 +182,8 @@ export const cards = [
     city: {
       name: `Amsterdam`,
       location: {
-        lat: 52.37454,
-        lon: 4.897976,
+        latitude: 52.37454,
+        longitude: 4.897976,
         zoom: 13,
       },
     },
@@ -227,8 +227,8 @@ export const cards = [
     description:
       `I rent out a very sunny and bright apartment only 7 minutes walking distance to the metro station. The apartment has a spacious living room with a kitchen, one bedroom and a bathroom with mit bath. A terrace can be used in summer.`,
     location: {
-      lat: 52.36354,
-      lon: 4.889976,
+      latitude: 52.36354,
+      longitude: 4.889976,
       zoom: 16,
     },
     id: 4,
@@ -242,8 +242,8 @@ export const cards = [
     city: {
       name: `Brussels`,
       location: {
-        lat: 50.846557,
-        lon: 4.351697,
+        latitude: 50.846557,
+        longitude: 4.351697,
         zoom: 13,
       },
     },
@@ -278,8 +278,8 @@ export const cards = [
     description:
       `Design interior in most sympathetic area! Complitely renovated, well-equipped, cosy studio in idyllic, over 100 years old wooden house. Calm street, fast connection to center and airport.`,
     location: {
-      lat: 50.867557,
-      lon: 4.371696999999999,
+      latitude: 50.867557,
+      longitude: 4.371696999999999,
       zoom: 16,
     },
     id: 5,
@@ -293,8 +293,8 @@ export const cards = [
     city: {
       name: `Hamburg`,
       location: {
-        lat: 53.550341,
-        lon: 10.000654,
+        latitude: 53.550341,
+        longitude: 10.000654,
         zoom: 13,
       },
     },
@@ -336,8 +336,8 @@ export const cards = [
     description:
       `I am happy to welcome you to my apartment in the city center! Three words: location, cosy and chic!`,
     location: {
-      lat: 53.558341000000006,
-      lon: 9.999654000000001,
+      latitude: 53.558341000000006,
+      longitude: 9.999654000000001,
       zoom: 16,
     },
     id: 6,
@@ -351,8 +351,8 @@ export const cards = [
     city: {
       name: `Cologne`,
       location: {
-        lat: 50.938361,
-        lon: 6.959974,
+        latitude: 50.938361,
+        longitude: 6.959974,
         zoom: 13,
       },
     },
@@ -387,8 +387,8 @@ export const cards = [
     description:
       `I am happy to welcome you to my apartment in the city center! Three words: location, cosy and chic!`,
     location: {
-      lat: 50.930361,
-      lon: 6.937974,
+      latitude: 50.930361,
+      longitude: 6.937974,
       zoom: 16,
     },
     id: 7,
@@ -402,8 +402,8 @@ export const cards = [
     city: {
       name: `Cologne`,
       location: {
-        lat: 50.938361,
-        lon: 6.959974,
+        latitude: 50.938361,
+        longitude: 6.959974,
         zoom: 13,
       },
     },
@@ -448,8 +448,8 @@ export const cards = [
     description:
       `I rent out a very sunny and bright apartment only 7 minutes walking distance to the metro station. The apartment has a spacious living room with a kitchen, one bedroom and a bathroom with mit bath. A terrace can be used in summer.`,
     location: {
-      lat: 50.945361,
-      lon: 6.962974,
+      latitude: 50.945361,
+      longitude: 6.962974,
       zoom: 16,
     },
     id: 8,
@@ -480,7 +480,7 @@ export const offer = {
   ],
   previewImage: `https://assets.htmlacademy.ru/intensives/javascript-3/hotel/14.jpg`,
   isPremium: false,
-  title: `Amazing and Extremely Central Flat`,
+  title: `Amazing and Extremely Central Flatitude`,
   isFavorite: false,
   rating: 4,
   type: `house`,
@@ -506,8 +506,8 @@ export const offer = {
   description: `Peaceful studio in the most wanted area in town. Quiet house Near of everything. Completely renovated. Lovely neighbourhood, lot of trendy shops, restaurants and bars in a walking distance.`,
   id: 4,
   location: {
-    lat: 52.3809553943508,
-    lon: 4.939309666406198,
+    latitude: 52.3809553943508,
+    longitude: 4.939309666406198,
     zoom: 8
   }
 };
