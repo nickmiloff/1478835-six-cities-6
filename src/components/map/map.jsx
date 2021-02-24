@@ -60,7 +60,7 @@ const removeMarkers = (map) => {
 
 const Map = ({activeLocation, cards, activeCardId, type}) => {
   const map = useRef();
-  const currentCity = CITIES[activeLocation];
+  const currentCity = CITIES[activeLocation] || activeLocation;
   const currentType = MAP_TYPES[type];
 
   useEffect(() => {
@@ -101,7 +101,7 @@ const Map = ({activeLocation, cards, activeCardId, type}) => {
 };
 
 Map.propTypes = {
-  activeLocation: PropTypes.string.isRequired,
+  activeLocation: PropTypes.oneOfType([PropTypes.array, PropTypes.string]).isRequired,
   cards: PropTypes.arrayOf(PropTypes.shape(cardPropTypes)),
   activeCardId: PropTypes.number,
   type: PropTypes.string.isRequired
