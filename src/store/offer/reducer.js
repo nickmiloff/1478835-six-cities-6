@@ -29,7 +29,7 @@ const initialState = {
   },
   nearby: [],
   reviews: [],
-  loaded: false,
+  loaded: false
 };
 
 const offerReducer = (state = initialState, action) => {
@@ -37,25 +37,25 @@ const offerReducer = (state = initialState, action) => {
     case types.SET_OFFER:
       return {
         ...state,
-        offer: {...action.payload},
+        offer: {...action.payload}
       };
 
     case types.SET_NEARBY:
       return {
         ...state,
-        nearby: [...action.payload],
+        nearby: [...action.payload]
       };
 
     case types.SET_REVIEWS:
       return {
         ...state,
-        reviews: [...action.payload],
+        reviews: [...action.payload]
       };
 
     case types.SET_LOADED:
       return {
         ...state,
-        loaded: action.payload,
+        loaded: action.payload
       };
 
     default:
