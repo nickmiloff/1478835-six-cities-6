@@ -6,8 +6,8 @@ import Map from '../map/map';
 
 const RATING_PER_STAR = 20;
 
-const OfferInfo = ({offer, reviews, mapPlaces, isAuth = false}) => {
-  const {images, isPremium, title, isFavorite, rating, type, bedrooms, maxAdults, price, goods, host, description, id} = offer;
+const OfferInfo = ({offer, reviews, mapPlaces}) => {
+  const {images, isPremium, title, isFavorite, rating, type, bedrooms, maxAdults, price, goods, host, description, id, location} = offer;
 
   return (
     <section className="property">
@@ -82,10 +82,10 @@ const OfferInfo = ({offer, reviews, mapPlaces, isAuth = false}) => {
               </p>
             </div>
           </div>
-          <Reviews reviews={reviews} withForm={isAuth} />
+          <Reviews reviews={reviews} />
         </div>
       </div>
-      <Map cards={[...mapPlaces, offer]} activeLocation="Amsterdam" activeCardId={id} type="offer" />
+      <Map cards={[...mapPlaces, offer]} activeLocation={[location.latitude, location.longitude]} activeCardId={id} type="offer" />
     </section>
   );
 };

@@ -3,7 +3,14 @@ import PropTypes from 'prop-types';
 import Spinner from '../components/spiner/spiner';
 
 const withLoading = (Component) => {
-  const WithLoading = (props) => props.isLoaded && <Component {...props} /> || <Spinner />;
+  const WithLoading = (props) => {
+    return (
+      <>
+        {!props.isLoaded && <Spinner />}
+        <Component {...props} />
+      </>
+    );
+  };
 
   WithLoading.propTypes = {
     isLoaded: PropTypes.bool.isRequired
