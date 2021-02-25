@@ -8,7 +8,7 @@ import OfferInfo from '../../offer-info/offer-info';
 import NearPlaces from '../../near-places/near-places';
 import {getIsLoaded, getNearby, getOffer, getReviews} from '../../../store/offer/selectors';
 import {loadOffer} from '../../../store/offer/operations';
-import withLoading from '../../../hocs/withLoaded';
+import withLoading from '../../../hocs/withLoading';
 
 const Offer = ({offer, nearby, reviews, uploadOffer, match}) => {
   useEffect(() => {
