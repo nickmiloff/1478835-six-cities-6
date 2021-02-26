@@ -1,12 +1,16 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {compose} from 'redux';
 import PropTypes from 'prop-types';
 import {offerPropTypes} from '../../prop-types.prop';
 import Reviews from '../reviews/reviews';
 import Map from '../map/map';
+import withAuth from '../../hocs/withAuth';
+import {changeFavorite} from '../../store/offer/operations';
 
 const RATING_PER_STAR = 20;
 
-const OfferInfo = ({offer, reviews, mapPlaces}) => {
+const OfferInfo = ({offer, reviews, mapPlaces, onFavoriteClick, isAuth}) => {
   const {images, isPremium, title, isFavorite, rating, type, bedrooms, maxAdults, price, goods, host, description, id, location} = offer;
 
   return (
@@ -27,7 +31,13 @@ const OfferInfo = ({offer, reviews, mapPlaces}) => {
             <h1 className="property__name">
               {title}
             </h1>
-            <button className={`property__bookmark-button button${isFavorite && ` property__bookmark-button--active` || ``}`} type="button">
+            <button
+              className={`property__bookmark-button button${isFavorite && ` property__bookmark-button--active` || ``}`}
+              type="button"
+              onClick={() => {
+                onFavoriteClick(id, !isFavorite);
+              }}
+              disabled={!isAuth}>
               <svg className="property__bookmark-icon" width="31" height="33">
                 <use xlinkHref="#icon-bookmark"></use>
               </svg>
@@ -82,7 +92,7 @@ const OfferInfo = ({offer, reviews, mapPlaces}) => {
               </p>
             </div>
           </div>
-          <Reviews reviews={reviews} />
+          <Reviews reviews={reviews} isAuth={isAuth} />
         </div>
       </div>
       <Map cards={[...mapPlaces, offer]} activeLocation={[location.latitude, location.longitude]} activeCardId={id} type="offer" />
@@ -94,7 +104,15 @@ OfferInfo.propTypes = {
   offer: PropTypes.shape(offerPropTypes).isRequired,
   reviews: PropTypes.array.isRequired,
   mapPlaces: PropTypes.array.isRequired,
-  isAuth: PropTypes.bool
+  isAuth: PropTypes.bool.isRequired,
+  onFavoriteClick: PropTypes.func.isRequired
 };
 
-export default OfferInfo;
+const mapDispatchToProps = {
+  onFavoriteClick: changeFavorite
+};
+
+export default compose(
+    connect(null, mapDispatchToProps),
+    withAuth
+)(OfferInfo);

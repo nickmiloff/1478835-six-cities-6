@@ -1,10 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {compose} from 'redux';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import {authInfoPropTypes} from '../../prop-types.prop';
-import {getIsAuth, getUser} from '../../store/app/selectors';
+import {getUser} from '../../store/app/selectors';
 import {logout} from '../../store/app/operations';
+import withAuth from '../../hocs/withAuth';
 
 const styles = {
   border: `none`,
@@ -53,7 +55,6 @@ Header.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  isAuth: getIsAuth(state),
   user: getUser(state)
 });
 
@@ -61,4 +62,7 @@ const mapDispatchToProps = {
   onLogout: logout
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps),
+    withAuth
+)(Header);

@@ -1,8 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Header from '../../header/header';
 import LoginForm from '../../login-form/login-form';
+import withAuth from '../../../hocs/withAuth';
+import {Redirect} from 'react-router-dom';
 
-const LoginPage = () => {
+const LoginPage = ({isAuth}) => {
+  if (isAuth) {
+    return <Redirect to="/" />;
+  }
+
   return (
     <div className="page page--gray page--login">
       <Header />
@@ -25,4 +32,8 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+LoginPage.propTypes = {
+  isAuth: PropTypes.bool.isRequired
+};
+
+export default withAuth(LoginPage);

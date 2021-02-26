@@ -1,5 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
+import withAuth from '../../hocs/withAuth';
 import {cardPropTypes} from '../../prop-types.prop';
 
 const RATING_PER_STAR = 20;
@@ -33,7 +35,7 @@ const CARD_TYPES = {
   }
 };
 
-const Card = ({isPremium, previewImage, price, isFavorite, rating, title, id, type, cardType, chnageActiveCardId}) => {
+const Card = ({isPremium, previewImage, price, isFavorite, rating, title, id, type, cardType, chnageActiveCardId, onFavoriteClick, isAuth}) => {
   const cardTypeOptions = CARD_TYPES[cardType];
 
   return (
@@ -62,7 +64,13 @@ const Card = ({isPremium, previewImage, price, isFavorite, rating, title, id, ty
             <b className="place-card__price-value">&euro;{price}</b>
             <span className="place-card__price-text">&#47;&nbsp;night</span>
           </div>
-          <button className={`place-card__bookmark-button button${isFavorite && ` place-card__bookmark-button--active` || ``}`} type="button">
+          <button
+            className={`place-card__bookmark-button button${isFavorite && ` place-card__bookmark-button--active` || ``}`}
+            type="button"
+            onClick={() => {
+              onFavoriteClick(id, !isFavorite);
+            }}
+            disabled={!isAuth}>
             <svg className="place-card__bookmark-icon" width="18" height="19">
               <use xlinkHref="#icon-bookmark"></use>
             </svg>
@@ -84,6 +92,11 @@ const Card = ({isPremium, previewImage, price, isFavorite, rating, title, id, ty
   );
 };
 
-Card.propTypes = cardPropTypes;
+Card.propTypes = {
+  ...cardPropTypes,
+  chnageActiveCardId: PropTypes.func.isRequired,
+  onFavoriteClick: PropTypes.func.isRequired,
+  isAuth: PropTypes.bool.isRequired
+};
 
-export default Card;
+export default withAuth(Card);

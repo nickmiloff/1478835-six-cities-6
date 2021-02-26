@@ -1,4 +1,5 @@
 import * as actions from './actions';
+import * as mainActions from '../main/actions';
 import {Statuses} from '../../services/load-statuses';
 import {dataToHotelCard, dataToComment} from '../../services/adapters';
 
@@ -34,5 +35,27 @@ export const sendComment = (id, comment, rating) => (dispatch, _getState, api) =
     })
     .finally(() => {
       setTimeout(() => dispatch(actions.setReviewLoaded(Statuses.PENDING)), ERROR_TIMEOUT);
+    });
+};
+
+export const changeFavorite = (id, status) => (dispatch, _getState, api) => {
+  api.post(`favorite/${id}/${Number(status)}`)
+    .then(({data}) => {
+      dispatch(actions.setOffer(dataToHotelCard(data)));
+      dispatch(mainActions.changeCard(dataToHotelCard(data)));
+    })
+    .catch(() => {
+      dispatch(actions.setLoaded(Statuses.ERROR));
+    });
+};
+
+export const changeNearbyFavorite = (id, status) => (dispatch, _getState, api) => {
+  api.post(`favorite/${id}/${Number(status)}`)
+    .then(({data}) => {
+      dispatch(actions.changeNearby(dataToHotelCard(data)));
+      dispatch(mainActions.changeCard(dataToHotelCard(data)));
+    })
+    .catch(() => {
+      dispatch(actions.setLoaded(Statuses.ERROR));
     });
 };

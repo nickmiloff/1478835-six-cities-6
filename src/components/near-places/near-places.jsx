@@ -1,18 +1,25 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import CardsList from '../cards-list/cards-list';
+import {changeNearbyFavorite} from '../../store/offer/operations';
 
-const NearPlaces = ({places}) => {
+const NearPlaces = ({places, onFavoriteClick}) => {
   return (
     <section className="near-places places">
       <h2 className="near-places__title">Other places in the neighbourhood</h2>
-      <CardsList cards={places} cardType="offer" />
+      <CardsList cards={places} cardType="offer" onFavoriteClick={onFavoriteClick} />
     </section>
   );
 };
 
 NearPlaces.propTypes = {
-  places: PropTypes.array.isRequired
+  places: PropTypes.array.isRequired,
+  onFavoriteClick: PropTypes.func.isRequired
 };
 
-export default NearPlaces;
+const mapDispatchToProps = {
+  onFavoriteClick: changeNearbyFavorite
+};
+
+export default connect(null, mapDispatchToProps)(NearPlaces);

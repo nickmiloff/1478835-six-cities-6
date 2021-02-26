@@ -1,8 +1,9 @@
 import * as types from './types';
-import {cards} from '../../mock';
+import {Statuses} from '../../services/load-statuses';
 
 const initialState = {
-  cards: [...cards]
+  cards: [],
+  loaded: Statuses.PENDING
 };
 
 const favoritesReducer = (state = initialState, action) => {
@@ -11,6 +12,23 @@ const favoritesReducer = (state = initialState, action) => {
       return {
         ...state,
         cards: [...action.payload]
+      };
+
+    case types.SET_LOADED:
+      return {
+        ...state,
+        loaded: action.payload
+      };
+
+    case types.CHANGE_CARD:
+      const index = state.cards.findIndex((card) => card.id === action.payload.id);
+
+      return {
+        ...state,
+        cards: [
+          ...state.cards.slice(0, index),
+          ...state.cards.slice(index + 1)
+        ]
       };
 
     default:

@@ -34,6 +34,18 @@ const mainReducer = (state = initialState, action) => {
         loaded: action.payload
       };
 
+    case types.CHANGE_CARD:
+      const index = state.cards.findIndex((card) => card.id === action.payload.id);
+
+      return {
+        ...state,
+        cards: [
+          ...state.cards.slice(0, index),
+          action.payload,
+          ...state.cards.slice(index + 1)
+        ]
+      };
+
     default:
       return state;
   }

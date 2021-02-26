@@ -66,6 +66,18 @@ const offerReducer = (state = initialState, action) => {
         reviewLoaded: action.payload
       };
 
+    case types.CHANGE_NEARBY:
+      const index = state.nearby.findIndex((card) => card.id === action.payload.id);
+
+      return {
+        ...state,
+        nearby: [
+          ...state.nearby.slice(0, index),
+          action.payload,
+          ...state.nearby.slice(index + 1)
+        ]
+      };
+
     default:
       return state;
   }

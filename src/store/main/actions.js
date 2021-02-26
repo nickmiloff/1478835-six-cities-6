@@ -4,3 +4,4 @@ export const setLocation = (location) => ({type: types.SET_LOCATION, payload: lo
 export const setCards = (cards) => ({type: types.SET_CARDS, payload: cards});
 export const setType = (type) => ({type: types.SET_TYPE, payload: type});
 export const setLoaded = (loaded) => ({type: types.SET_LOADED, payload: loaded});
+export const changeCard = (card) => ({type: types.CHANGE_CARD, payload: card});
