@@ -1,11 +1,11 @@
 import * as types from './types';
-import * as statuses from '../../services/load-statuses';
+import {Statuses} from '../../services/load-statuses';
 
 const initialState = {
   location: `Paris`,
   cards: [],
   type: `Popular`,
-  loaded: statuses.PENDING
+  loaded: Statuses.PENDING
 };
 
 const mainReducer = (state = initialState, action) => {

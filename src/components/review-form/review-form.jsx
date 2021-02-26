@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import {useParams} from 'react-router-dom';
 import {getReviewIsLoaded} from '../../store/offer/selectors';
 import {sendComment} from '../../store/offer/operations';
-import * as statuses from '../../services/load-statuses';
+import {Statuses} from '../../services/load-statuses';
 
 const STARS_COUNT = 5;
 const REVIEW_SIZING = {
@@ -18,7 +18,7 @@ const ReviewForm = ({onSubmit, isLoaded}) => {
   const {id} = useParams();
 
   useEffect(() => {
-    if (isLoaded === statuses.LOADED) {
+    if (isLoaded === Statuses.LOADED) {
       setRating(null);
       setReview(``);
     }
@@ -47,7 +47,7 @@ const ReviewForm = ({onSubmit, isLoaded}) => {
                 setRating(() => STARS_COUNT - index);
               }}
               checked={rating === STARS_COUNT - index}
-              disabled={isLoaded === statuses.LOAD} />
+              disabled={isLoaded === Statuses.LOAD} />
             <label htmlFor={`${STARS_COUNT - index}-stars`} className="reviews__rating-label form__rating-label" title="perfect">
               <svg className="form__star-image" width="37" height="33">
                 <use xlinkHref="#icon-star"></use>
@@ -66,7 +66,7 @@ const ReviewForm = ({onSubmit, isLoaded}) => {
           setReview(evt.target.value);
         }}
         maxLength={REVIEW_SIZING.max}
-        disabled={isLoaded === statuses.LOAD}></textarea>
+        disabled={isLoaded === Statuses.LOAD}></textarea>
       <div className="reviews__button-wrapper">
         <p className="reviews__help">
           To submit review please make sure to set <span className="reviews__star">rating</span> and describe your stay with at least <b className="reviews__text-amount">50 characters</b>.
@@ -74,15 +74,15 @@ const ReviewForm = ({onSubmit, isLoaded}) => {
         <button
           className="reviews__submit form__submit button"
           type="submit"
-          disabled={rating === null || review.length < REVIEW_SIZING.min || isLoaded === statuses.LOAD}>Submit</button>
+          disabled={rating === null || review.length < REVIEW_SIZING.min || isLoaded === Statuses.LOAD}>Submit</button>
       </div>
-      {isLoaded === statuses.ERROR && <div className="form__error"><span>Oups... Review sending error!</span></div>}
+      {isLoaded === Statuses.ERROR && <div className="form__error"><span>Oups... Review sending error!</span></div>}
     </form>
   );
 };
 
 ReviewForm.propTypes = {
-  isLoaded: PropTypes.oneOf([...Object.values(statuses)]).isRequired,
+  isLoaded: PropTypes.oneOf([...Object.values(Statuses)]).isRequired,
   onSubmit: PropTypes.func.isRequired
 };
 

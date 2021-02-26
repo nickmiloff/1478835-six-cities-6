@@ -1,5 +1,5 @@
 import * as types from './types';
-import * as statuses from '../../services/load-statuses';
+import {Statuses} from '../../services/load-statuses';
 
 const initialState = {
   offer: {
@@ -30,8 +30,8 @@ const initialState = {
   },
   nearby: [],
   reviews: [],
-  loaded: statuses.PENDING,
-  reviewLoaded: statuses.PENDING
+  loaded: Statuses.PENDING,
+  reviewLoaded: Statuses.PENDING
 };
 
 const offerReducer = (state = initialState, action) => {
