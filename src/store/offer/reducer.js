@@ -1,4 +1,5 @@
-import * as types from "./types";
+import * as types from './types';
+import * as statuses from '../../services/load-statuses';
 
 const initialState = {
   offer: {
@@ -29,7 +30,8 @@ const initialState = {
   },
   nearby: [],
   reviews: [],
-  loaded: false
+  loaded: statuses.PENDING,
+  reviewLoaded: statuses.PENDING
 };
 
 const offerReducer = (state = initialState, action) => {
@@ -56,6 +58,12 @@ const offerReducer = (state = initialState, action) => {
       return {
         ...state,
         loaded: action.payload
+      };
+
+    case types.SET_REVIEW_LOADED:
+      return {
+        ...state,
+        reviewLoaded: action.payload
       };
 
     default:

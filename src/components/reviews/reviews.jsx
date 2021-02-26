@@ -8,7 +8,7 @@ import ReviewForm from '../review-form/review-form';
 const Reviews = ({reviews, isAuth}) => {
   return (
     <section className="property__reviews reviews">
-      <h2 className="reviews__title">Reviews &middot; <span className="reviews__amount">1</span></h2>
+      <h2 className="reviews__title">Reviews &middot; <span className="reviews__amount">{reviews.length}</span></h2>
       <ReviewsList reviews={reviews} />
       {isAuth && <ReviewForm /> || ``}
     </section>

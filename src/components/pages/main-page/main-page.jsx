@@ -7,7 +7,7 @@ import {setLocation} from '../../../store/main/actions';
 import Header from '../../header/header';
 import Locations from '../../locations/locations';
 import Cities from '../../cities/cities';
-import withLoading from '../../../hocs/withLoaded';
+import withLoading from '../../../hocs/withLoading';
 
 const MainPage = ({location, cards, changeLocation}) => {
   const isEmpty = !cards.length;
@@ -29,7 +29,6 @@ const MainPage = ({location, cards, changeLocation}) => {
 MainPage.propTypes = {
   location: PropTypes.string.isRequired,
   cards: PropTypes.array.isRequired,
-  isLoaded: PropTypes.bool.isRequired,
   changeLocation: PropTypes.func.isRequired
 };
 
