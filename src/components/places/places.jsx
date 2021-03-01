@@ -11,7 +11,7 @@ const Places = ({cards, location, setActiveCardId, onFavoriteClick}) => {
       <h2 className="visually-hidden">Places</h2>
       <b className="places__found">{cards.length} places to stay in {location}</b>
       <PlacesSorting />
-      <CardsList cards={cards} cardType="main" chnageActiveCardId={setActiveCardId} onFavoriteClick={onFavoriteClick} />
+      <CardsList cards={cards} cardType="main" onChnageActiveCardId={setActiveCardId} onFavoriteClick={onFavoriteClick} />
     </section>
   );
 };

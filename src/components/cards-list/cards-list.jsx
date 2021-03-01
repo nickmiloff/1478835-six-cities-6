@@ -8,14 +8,16 @@ const CARD_TYPES = {
   offer: `near-places__list places__list`
 };
 
-const CardsList = ({cards, cardType, chnageActiveCardId = () => {}, onFavoriteClick}) => {
+const CardsList = ({cards, cardType, onChnageActiveCardId = () => {}, onFavoriteClick}) => {
+  const changeActiveCardIdHandler = React.useCallback((id) => onChnageActiveCardId(id), []);
+
   return (
     <div className={CARD_TYPES[cardType]}>
       {cards.map((card) =>
         <Card
           cardType={cardType}
           key={card.id}
-          chnageActiveCardId={chnageActiveCardId}
+          onChnageActiveCardId={changeActiveCardIdHandler}
           onFavoriteClick={onFavoriteClick}
           {...card} />)}
     </div>
@@ -25,8 +27,8 @@ const CardsList = ({cards, cardType, chnageActiveCardId = () => {}, onFavoriteCl
 CardsList.propTypes = {
   cards: PropTypes.array.isRequired,
   cardType: PropTypes.string.isRequired,
-  chnageActiveCardId: PropTypes.func,
+  onChnageActiveCardId: PropTypes.func,
   onFavoriteClick: PropTypes.func.isRequired
 };
 
-export default CardsList;
+export default React.memo(CardsList);

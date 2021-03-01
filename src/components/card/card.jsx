@@ -35,17 +35,17 @@ const CARD_TYPES = {
   }
 };
 
-const Card = ({isPremium, previewImage, price, isFavorite, rating, title, id, type, cardType, chnageActiveCardId, onFavoriteClick, isAuth}) => {
+const Card = ({isPremium, previewImage, price, isFavorite, rating, title, id, type, cardType, onChnageActiveCardId, onFavoriteClick, isAuth}) => {
   const cardTypeOptions = CARD_TYPES[cardType];
 
   return (
     <article
       className={`${cardTypeOptions.articleClass}place-card`}
       onMouseEnter={() => {
-        chnageActiveCardId(id);
+        onChnageActiveCardId(id);
       }}
       onMouseLeave={() => {
-        chnageActiveCardId(null);
+        onChnageActiveCardId(null);
       }}>
       {isPremium && <div className="place-card__mark"><span>Premium</span></div> || ``}
       <div className={`${cardTypeOptions.image.class}__image-wrapper place-card__image-wrapper`}>
@@ -94,7 +94,7 @@ const Card = ({isPremium, previewImage, price, isFavorite, rating, title, id, ty
 
 Card.propTypes = {
   ...cardPropTypes,
-  chnageActiveCardId: PropTypes.func.isRequired,
+  onChnageActiveCardId: PropTypes.func.isRequired,
   onFavoriteClick: PropTypes.func.isRequired,
   isAuth: PropTypes.bool.isRequired
 };
