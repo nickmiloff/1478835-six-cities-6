@@ -1,20 +1,15 @@
-import * as types from './types';
+import {createReducer} from '@reduxjs/toolkit';
+import * as actions from './actions';
 
 const initialState = {
   authorized: null
 };
 
-const appReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case types.SET_AUTH:
-      return {
-        ...state,
-        authorized: action.payload
-      };
-
-    default:
-      return state;
-  }
-};
+const appReducer = createReducer(initialState, (builder) => {
+  builder
+    .addCase(actions.setAuth, (state, action) => {
+      state.authorized = action.payload;
+    });
+});
 
 export default appReducer;

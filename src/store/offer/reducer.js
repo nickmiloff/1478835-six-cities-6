@@ -1,4 +1,5 @@
-import * as types from './types';
+import {createReducer} from '@reduxjs/toolkit';
+import * as actions from './actions';
 import {Statuses} from '../../services/load-statuses';
 
 const initialState = {
@@ -34,53 +35,31 @@ const initialState = {
   reviewLoaded: Statuses.PENDING
 };
 
-const offerReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case types.SET_OFFER:
-      return {
-        ...state,
-        offer: {...action.payload}
-      };
-
-    case types.SET_NEARBY:
-      return {
-        ...state,
-        nearby: [...action.payload]
-      };
-
-    case types.SET_REVIEWS:
-      return {
-        ...state,
-        reviews: [...action.payload]
-      };
-
-    case types.SET_LOADED:
-      return {
-        ...state,
-        loaded: action.payload
-      };
-
-    case types.SET_REVIEW_LOADED:
-      return {
-        ...state,
-        reviewLoaded: action.payload
-      };
-
-    case types.CHANGE_NEARBY:
+const offerReducer = createReducer(initialState, (builder) => {
+  builder
+    .addCase(actions.setOffer, (state, action) => {
+      state.offer = {...action.payload};
+    })
+    .addCase(actions.setNearby, (state, action) => {
+      state.nearby = [...action.payload];
+    })
+    .addCase(actions.setReviews, (state, action) => {
+      state.reviews = [...action.payload];
+    })
+    .addCase(actions.setLoaded, (state, action) => {
+      state.loaded = action.payload;
+    })
+    .addCase(actions.setReviewLoaded, (state, action) => {
+      state.reviewLoaded = action.payload;
+    })
+    .addCase(actions.changeNearby, (state, action) => {
       const index = state.nearby.findIndex((card) => card.id === action.payload.id);
-
-      return {
-        ...state,
-        nearby: [
-          ...state.nearby.slice(0, index),
-          action.payload,
-          ...state.nearby.slice(index + 1)
-        ]
-      };
-
-    default:
-      return state;
-  }
-};
+      state.nearby = [
+        ...state.nearby.slice(0, index),
+        action.payload,
+        ...state.nearby.slice(index + 1)
+      ];
+    });
+});
 
 export default offerReducer;
