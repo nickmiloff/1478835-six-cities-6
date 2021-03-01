@@ -10,9 +10,9 @@ import Favorites from '../../favorites/favorites';
 import {loadFavorites} from '../../../store/favorites/operations';
 import withLoading from '../../../hocs/withLoading';
 
-const FavoritesPage = ({cards, uploadFavorites}) => {
+const FavoritesPage = ({cards, onComponentMount}) => {
   useEffect(() => {
-    uploadFavorites();
+    onComponentMount();
   }, []);
 
   const isEmpty = !cards.length;
@@ -34,7 +34,7 @@ const FavoritesPage = ({cards, uploadFavorites}) => {
 
 FavoritesPage.propTypes = {
   cards: PropTypes.array.isRequired,
-  uploadFavorites: PropTypes.func.isRequired
+  onComponentMount: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => ({
@@ -43,7 +43,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-  uploadFavorites: loadFavorites
+  onComponentMount: loadFavorites
 };
 
 export default compose(

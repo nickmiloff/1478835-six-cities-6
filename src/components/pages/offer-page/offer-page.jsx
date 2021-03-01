@@ -10,9 +10,9 @@ import {getIsLoaded, getNearby, getOffer, getReviews} from '../../../store/offer
 import {loadOffer} from '../../../store/offer/operations';
 import withLoading from '../../../hocs/withLoading';
 
-const Offer = ({offer, nearby, reviews, uploadOffer, match}) => {
+const Offer = ({offer, nearby, reviews, onComponentMount, match}) => {
   useEffect(() => {
-    uploadOffer(match.params.id);
+    onComponentMount(match.params.id);
   }, [match.params.id]);
 
   return (
@@ -32,7 +32,7 @@ Offer.propTypes = {
   offer: PropTypes.shape(offerPropTypes).isRequired,
   nearby: PropTypes.array.isRequired,
   reviews: PropTypes.array.isRequired,
-  uploadOffer: PropTypes.func.isRequired,
+  onComponentMount: PropTypes.func.isRequired,
   match: PropTypes.object.isRequired
 };
 
@@ -44,7 +44,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-  uploadOffer: loadOffer
+  onComponentMount: loadOffer
 };
 
 export default compose(
