@@ -1,3 +1,8 @@
+import {createAction} from '@reduxjs/toolkit';
 import * as types from './types';
 
-export const redirectToRoute = (route) => ({type: types.REDIRECT_TO_ROUTE, payload: route});
+export const redirectToRoute = createAction(types.REDIRECT_TO_ROUTE, (route) => {
+  return {
+    payload: route
+  };
+});

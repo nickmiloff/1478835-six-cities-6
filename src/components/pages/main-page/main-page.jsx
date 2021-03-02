@@ -9,7 +9,7 @@ import Locations from '../../locations/locations';
 import Cities from '../../cities/cities';
 import withLoading from '../../../hocs/withLoading';
 
-const MainPage = ({location, cards, changeLocation}) => {
+const MainPage = ({location, cards, onChangeLocation}) => {
   const isEmpty = !cards.length;
 
   return (
@@ -18,7 +18,7 @@ const MainPage = ({location, cards, changeLocation}) => {
       <main className={`page__main page__main--index${isEmpty && ` page__main--index-empty` || ``}`}>
         <h1 className="visually-hidden">Cities</h1>
         <div className="tabs">
-          <Locations activeLocation={location} changeLocation={changeLocation} />
+          <Locations activeLocation={location} changeLocation={onChangeLocation} />
         </div>
         <Cities cards={cards} location={location} isEmpty={isEmpty} />
       </main>
@@ -29,7 +29,7 @@ const MainPage = ({location, cards, changeLocation}) => {
 MainPage.propTypes = {
   location: PropTypes.string.isRequired,
   cards: PropTypes.array.isRequired,
-  changeLocation: PropTypes.func.isRequired
+  onChangeLocation: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => ({
@@ -39,7 +39,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-  changeLocation: setLocation
+  onChangeLocation: setLocation
 };
 
 export default compose(

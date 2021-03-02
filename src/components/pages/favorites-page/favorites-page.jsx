@@ -1,13 +1,20 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {connect} from 'react-redux';
+import {compose} from 'redux';
 import PropTypes from 'prop-types';
-import {getCards} from '../../../store/favorites/selectors';
+import {getCards, getIsLoaded} from '../../../store/favorites/selectors';
 import Header from '../../header/header';
 import Footer from '../../footer/footer';
 import FavoritesEmpty from '../../favorites-empty/favorites-empty';
 import Favorites from '../../favorites/favorites';
+import {loadFavorites} from '../../../store/favorites/operations';
+import withLoading from '../../../hocs/withLoading';
 
-const FavoritesPage = ({cards}) => {
+const FavoritesPage = ({cards, onComponentMount}) => {
+  useEffect(() => {
+    onComponentMount();
+  }, []);
+
   const isEmpty = !cards.length;
 
   return (
@@ -26,11 +33,20 @@ const FavoritesPage = ({cards}) => {
 };
 
 FavoritesPage.propTypes = {
-  cards: PropTypes.array.isRequired
+  cards: PropTypes.array.isRequired,
+  onComponentMount: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => ({
-  cards: getCards(state)
+  cards: getCards(state),
+  isLoaded: getIsLoaded(state)
 });
 
-export default connect(mapStateToProps)(FavoritesPage);
+const mapDispatchToProps = {
+  onComponentMount: loadFavorites
+};
+
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps),
+    withLoading
+)(FavoritesPage);

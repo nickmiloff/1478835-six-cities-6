@@ -1,8 +1,7 @@
 import React from 'react';
-import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {Route, Redirect} from 'react-router-dom';
-import {getIsAuth} from '../../store/app/selectors';
+import withAuth from '../../hocs/withAuth';
 
 const PrivateRoute = ({component: Component, isAuth, ...params}) => {
   return (
@@ -15,8 +14,4 @@ PrivateRoute.propTypes = {
   component: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = (state) => ({
-  isAuth: getIsAuth(state),
-});
-
-export default connect(mapStateToProps)(PrivateRoute);
+export default withAuth(PrivateRoute);

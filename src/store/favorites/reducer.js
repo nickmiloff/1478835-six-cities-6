@@ -1,21 +1,27 @@
-import * as types from './types';
-import {cards} from '../../mock';
+import {createReducer} from '@reduxjs/toolkit';
+import * as actions from './actions';
+import {Statuses} from '../../services/load-statuses';
 
 const initialState = {
-  cards: [...cards]
+  cards: [],
+  loaded: Statuses.PENDING
 };
 
-const favoritesReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case types.SET_CARDS:
-      return {
-        ...state,
-        cards: [...action.payload]
-      };
-
-    default:
-      return state;
-  }
-};
+const favoritesReducer = createReducer(initialState, (builder) => {
+  builder
+    .addCase(actions.setCards, (state, action) => {
+      state.cards = [...action.payload];
+    })
+    .addCase(actions.setLoaded, (state, action) => {
+      state.loaded = action.payload;
+    })
+    .addCase(actions.changeCard, (state, action) => {
+      const index = state.cards.findIndex((card) => card.id === action.payload.id);
+      state.cards = [
+        ...state.cards.slice(0, index),
+        ...state.cards.slice(index + 1)
+      ];
+    });
+});
 
 export default favoritesReducer;

@@ -6,7 +6,7 @@ import {setType} from '../../store/main/actions';
 
 const OPTIONS = [`Popular`, `Price: low to high`, `Price: high to low`, `Top rated first`];
 
-const PlacesSorting = ({activeOption, changeOption}) => {
+const PlacesSorting = ({activeOption, onChangeOption}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -30,7 +30,7 @@ const PlacesSorting = ({activeOption, changeOption}) => {
             tabIndex="0"
             key={index}
             onClick={() => {
-              changeOption(option);
+              onChangeOption(option);
               setIsOpen(false);
             }}>
             {option}
@@ -43,7 +43,7 @@ const PlacesSorting = ({activeOption, changeOption}) => {
 
 PlacesSorting.propTypes = {
   activeOption: PropTypes.string.isRequired,
-  changeOption: PropTypes.func.isRequired
+  onChangeOption: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => ({
@@ -51,7 +51,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-  changeOption: setType
+  onChangeOption: setType
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlacesSorting);

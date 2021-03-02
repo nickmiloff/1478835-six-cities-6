@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {getIsAuth} from '../../store/app/selectors';
 import ReviewsList from '../reviews-list/reviews-list';
 import ReviewForm from '../review-form/review-form';
 
@@ -20,8 +18,4 @@ Reviews.propTypes = {
   isAuth: PropTypes.bool.isRequired
 };
 
-const mapStateToProps = (state) => ({
-  isAuth: getIsAuth(state)
-});
-
-export default connect(mapStateToProps)(Reviews);
+export default React.memo(Reviews);

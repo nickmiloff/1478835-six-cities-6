@@ -1,42 +1,36 @@
-import * as types from './types';
-import * as statuses from '../../services/load-statuses';
+import {createReducer} from '@reduxjs/toolkit';
+import * as actions from './actions';
+import {Statuses} from '../../services/load-statuses';
 
 const initialState = {
   location: `Paris`,
   cards: [],
   type: `Popular`,
-  loaded: statuses.PENDING
+  loaded: Statuses.PENDING
 };
 
-const mainReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case types.SET_LOCATION:
-      return {
-        ...state,
-        location: action.payload
-      };
-
-    case types.SET_CARDS:
-      return {
-        ...state,
-        cards: [...action.payload]
-      };
-
-    case types.SET_TYPE:
-      return {
-        ...state,
-        type: action.payload
-      };
-
-    case types.SET_LOADED:
-      return {
-        ...state,
-        loaded: action.payload
-      };
-
-    default:
-      return state;
-  }
-};
+const mainReducer = createReducer(initialState, (builder) => {
+  builder
+    .addCase(actions.setLocation, (state, action) => {
+      state.location = action.payload;
+    })
+    .addCase(actions.setCards, (state, action) => {
+      state.cards = [...action.payload];
+    })
+    .addCase(actions.setType, (state, action) => {
+      state.type = action.payload;
+    })
+    .addCase(actions.setLoaded, (state, action) => {
+      state.loaded = action.payload;
+    })
+    .addCase(actions.changeCard, (state, action) => {
+      const index = state.cards.findIndex((card) => card.id === action.payload.id);
+      state.cards = [
+        ...state.cards.slice(0, index),
+        action.payload,
+        ...state.cards.slice(index + 1)
+      ];
+    });
+});
 
 export default mainReducer;
