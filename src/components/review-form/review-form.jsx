@@ -36,7 +36,7 @@ const ReviewForm = ({onSubmit, isLoaded}) => {
       <label className="reviews__label form__label" htmlFor="review">Your review</label>
       <div className="reviews__rating-form form__rating">
         {Array(5).fill(``).map((_, index) =>
-          <React.Fragment key={index}>
+          <React.Fragment key={`rating-star-${index}`}>
             <input
               className="form__rating-input visually-hidden"
               name="rating"

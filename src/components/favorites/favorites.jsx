@@ -13,7 +13,7 @@ const Favorites = ({cards}) => {
           CITIES_LIST.map(
               (city, index) => {
                 const filteredCards = cards.filter((card) => card.city.name === city);
-                return filteredCards.length < 1 ? `` : <FavoritesLocation city={city} cards={filteredCards} key={index} />;
+                return filteredCards.length < 1 ? `` : <FavoritesLocation city={city} cards={filteredCards} key={`favorite-city-${index}`} />;
               })
         }
       </ul>

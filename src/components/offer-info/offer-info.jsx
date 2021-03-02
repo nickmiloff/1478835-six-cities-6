@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {compose} from 'redux';
 import PropTypes from 'prop-types';
+import {useHistory} from 'react-router-dom';
 import {offerPropTypes} from '../../prop-types.prop';
 import Reviews from '../reviews/reviews';
 import Map from '../map/map';
@@ -12,13 +13,14 @@ const RATING_PER_STAR = 20;
 
 const OfferInfo = ({offer, reviews, mapPlaces, onFavoriteClick, isAuth}) => {
   const {images, isPremium, title, isFavorite, rating, type, bedrooms, maxAdults, price, goods, host, description, id, location} = offer;
+  const history = useHistory();
 
   return (
     <section className="property">
       <div className="property__gallery-container container">
         <div className="property__gallery">
           {images.slice(0, 6).map((image, index) => (
-            <div className="property__image-wrapper" key={index}>
+            <div className="property__image-wrapper" key={`property-image-${index}`}>
               <img className="property__image" src={image} alt="Photo studio" />
             </div>
           ))}
@@ -34,10 +36,7 @@ const OfferInfo = ({offer, reviews, mapPlaces, onFavoriteClick, isAuth}) => {
             <button
               className={`property__bookmark-button button${isFavorite && ` property__bookmark-button--active` || ``}`}
               type="button"
-              onClick={() => {
-                onFavoriteClick(id, !isFavorite);
-              }}
-              disabled={!isAuth}>
+              onClick={() => isAuth ? onFavoriteClick(id, !isFavorite) : history.push(`/login`)}>
               <svg className="property__bookmark-icon" width="31" height="33">
                 <use xlinkHref="#icon-bookmark"></use>
               </svg>
@@ -70,7 +69,7 @@ const OfferInfo = ({offer, reviews, mapPlaces, onFavoriteClick, isAuth}) => {
             <h2 className="property__inside-title">What&apos;s inside</h2>
             <ul className="property__inside-list">
               {goods.map((good, index) => (
-                <li className="property__inside-item" key={index}>
+                <li className="property__inside-item" key={`property-good-${index}`}>
                   {good}
                 </li>
               ))}

@@ -22,9 +22,9 @@ const store = configureStore({
     getDefaultMiddleware({
       thunk: {
         extraArgument: api
-      },
-      redirect
+      }
     })
+    .concat(redirect)
 });
 
 export default store;
