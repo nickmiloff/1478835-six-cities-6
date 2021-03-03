@@ -1,5 +1,6 @@
 import * as actions from './actions';
 import * as middlewaresActions from '../middlewares/actions';
+import * as mainOperations from '../main/operations';
 import {dataToAuthInfo} from '../../services/adapters';
 
 export const checkAuth = () => (dispatch, _getState, api) => {
@@ -10,13 +11,20 @@ export const checkAuth = () => (dispatch, _getState, api) => {
 
 export const login = (user) => (dispatch, _getState, api) => {
   api.post(`login`, user)
-    .then(({data}) => dispatch(actions.setAuth(dataToAuthInfo(data))))
-    .then(() => dispatch(middlewaresActions.redirectToRoute(`/`)))
+    .then(({data}) => {
+      dispatch(actions.setAuth(dataToAuthInfo(data)));
+      dispatch(mainOperations.loadOffers());
+      dispatch(middlewaresActions.redirectToRoute(`/`));
+    })
     .catch(() => {});
 };
 
 export const logout = () => (dispatch, _getState, api) => {
   api.get(`logout`)
-    .then(() => dispatch(actions.setAuth(null)))
+    .then(() => {
+      dispatch(actions.setAuth(null));
+      dispatch(middlewaresActions.redirectToRoute(`/`));
+      dispatch(mainOperations.loadOffers());
+    })
     .catch(() => {});
 };

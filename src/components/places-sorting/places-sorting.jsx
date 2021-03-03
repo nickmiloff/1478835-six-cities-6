@@ -28,7 +28,7 @@ const PlacesSorting = ({activeOption, onChangeOption}) => {
           <li
             className={`places__option${option === activeOption && ` places__option--active"` || ``}`}
             tabIndex="0"
-            key={index}
+            key={`places-option-${index}`}
             onClick={() => {
               onChangeOption(option);
               setIsOpen(false);

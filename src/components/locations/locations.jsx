@@ -8,7 +8,7 @@ const Locations = ({activeLocation, changeLocation}) => {
     <section className="locations container">
       <ul className="locations__list tabs__list">
         {LOCATIONS.map((location, index) =>
-          <li className="locations__item" key={index}>
+          <li className="locations__item" key={`location-${index}`}>
             <a
               className={`locations__item-link tabs__item${location === activeLocation && ` tabs__item--active` || ``}`}
               onClick={() => {

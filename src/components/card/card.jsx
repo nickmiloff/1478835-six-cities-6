@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import withAuth from '../../hocs/withAuth';
 import {cardPropTypes} from '../../prop-types.prop';
 
@@ -37,6 +37,7 @@ const CARD_TYPES = {
 
 const Card = ({isPremium, previewImage, price, isFavorite, rating, title, id, type, cardType, onChnageActiveCardId, onFavoriteClick, isAuth}) => {
   const cardTypeOptions = CARD_TYPES[cardType];
+  const history = useHistory();
 
   return (
     <article
@@ -67,10 +68,7 @@ const Card = ({isPremium, previewImage, price, isFavorite, rating, title, id, ty
           <button
             className={`place-card__bookmark-button button${isFavorite && ` place-card__bookmark-button--active` || ``}`}
             type="button"
-            onClick={() => {
-              onFavoriteClick(id, !isFavorite);
-            }}
-            disabled={!isAuth}>
+            onClick={() => isAuth ? onFavoriteClick(id, !isFavorite) : history.push(`/login`)}>
             <svg className="place-card__bookmark-icon" width="18" height="19">
               <use xlinkHref="#icon-bookmark"></use>
             </svg>
