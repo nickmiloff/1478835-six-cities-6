@@ -38,4 +38,6 @@ const App = () => {
   );
 };
 
+window.store = store;
+
 export default App;

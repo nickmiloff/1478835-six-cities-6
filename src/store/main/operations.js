@@ -4,7 +4,7 @@ import {dataToHotelCard} from '../../services/adapters';
 
 export const loadOffers = () => (dispatch, _getState, api) => {
   dispatch(actions.setLoaded(Statuses.LOAD));
-  api.get(`hotels`)
+  return api.get(`hotels`)
     .then(({data}) => {
       dispatch(actions.setCards(data.map(dataToHotelCard)));
       dispatch(actions.setLoaded(Statuses.LOADED));
@@ -15,7 +15,7 @@ export const loadOffers = () => (dispatch, _getState, api) => {
 };
 
 export const changeFavorite = (id, status) => (dispatch, _getState, api) => {
-  api.post(`favorite/${id}/${Number(status)}`)
+  return api.post(`favorite/${id}/${Number(status)}`)
     .then(({data}) => {
       dispatch(actions.changeCard(dataToHotelCard(data)));
     })

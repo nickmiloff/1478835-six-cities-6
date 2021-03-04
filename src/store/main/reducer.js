@@ -34,3 +34,6 @@ const mainReducer = createReducer(initialState, (builder) => {
 });
 
 export default mainReducer;
+export {
+  initialState
+};
