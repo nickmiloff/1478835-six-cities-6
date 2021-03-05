@@ -53,7 +53,7 @@ exports[`Review component test Review component' should render correctly 1`] = `
         class="reviews__time"
         datetime="2019-05-08T14:13:56.569Z"
       >
-        2019-5-8
+        May 2019
       </time>
     </div>
   </li>
