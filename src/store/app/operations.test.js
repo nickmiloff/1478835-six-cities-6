@@ -21,7 +21,7 @@ describe(`App async operation work correctly`, () => {
         expect(dispatch).toHaveBeenCalledTimes(1);
         expect(dispatch).toHaveBeenNthCalledWith(1, {
           type: types.SET_AUTH,
-          payload: auth.adapt,
+          payload: auth.adapted,
         });
       });
   });
@@ -41,7 +41,7 @@ describe(`App async operation work correctly`, () => {
 
         expect(dispatch).toHaveBeenNthCalledWith(1, {
           type: types.SET_AUTH,
-          payload: auth.adapt,
+          payload: auth.adapted,
         });
       });
   });

@@ -1,10 +1,15 @@
-export const store = {
+import {initialState as mainState} from '../../store/main/reducer';
+import {initialState as favoritesState} from '../../store/favorites/reducer';
+import {initialState as offerState} from '../../store/offer/reducer';
+import {initialState as appState} from '../../store/app/reducer';
+
+export const notEmpty = {
   main: {
     location: `Dusseldorf`,
     cards: [
       {
         city: {
-          name: `Paris`,
+          name: `Dusseldorf`,
           location: {
             latitude: 48.85661,
             longitude: 2.351499,
@@ -55,7 +60,7 @@ export const store = {
       },
       {
         city: {
-          name: `Amsterdam`,
+          name: `Dusseldorf`,
           location: {
             latitude: 52.37454,
             longitude: 4.897976,
@@ -523,7 +528,32 @@ export const store = {
         maxAdults: 4,
       },
     ],
-    reviews: [],
+    reviews: [
+      {
+        comment: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
+        date: `2019-05-08T14:13:56.569Z`,
+        id: 1,
+        rating: 4,
+        user: {
+          avatarUrl: `img/1.png`,
+          id: 4,
+          isPro: false,
+          name: `Max`
+        }
+      },
+      {
+        comment: `A quiet of Amsterdam.`,
+        date: `2019-06-08T14:13:56.569Z`,
+        id: 2,
+        rating: 3,
+        user: {
+          avatarUrl: `img/2.png`,
+          id: 5,
+          isPro: false,
+          name: `Vadim`
+        }
+      }
+    ],
     loaded: `status/loaded`,
     reviewLoaded: `status/pending`,
   },
@@ -537,4 +567,11 @@ export const store = {
       isPro: false,
     },
   },
+};
+
+export const empty = {
+  main: {...mainState},
+  favorites: {...favoritesState},
+  offer: {...offerState},
+  app: {...appState},
 };

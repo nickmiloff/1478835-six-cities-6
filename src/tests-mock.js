@@ -53,7 +53,7 @@ export const auth = {
     "avatar_url": `avatar.jpeg`,
     "is_pro": true
   },
-  adapt: {
+  adapted: {
     id: 1,
     email: `mail@mail.com`,
     name: `name`,
@@ -78,7 +78,15 @@ export const cardsFull = {
           "zoom": 13
         }
       },
-      "images": [],
+      "images": [
+        `https://assets.htmlacademy.ru/intensives/javascript-3/hotel/19.jpg`,
+        `https://assets.htmlacademy.ru/intensives/javascript-3/hotel/20.jpg`,
+        `https://assets.htmlacademy.ru/intensives/javascript-3/hotel/21.jpg`,
+        `https://assets.htmlacademy.ru/intensives/javascript-3/hotel/22.jpg`,
+        `https://assets.htmlacademy.ru/intensives/javascript-3/hotel/23.jpg`,
+        `https://assets.htmlacademy.ru/intensives/javascript-3/hotel/24.jpg`,
+        `https://assets.htmlacademy.ru/intensives/javascript-3/hotel/25.jpg`
+      ],
       "title": `Tile House`,
       "rating": 2,
       "type": `house`,
@@ -187,7 +195,15 @@ export const cardsFull = {
           zoom: 13,
         },
       },
-      images: [],
+      images: [
+        `https://assets.htmlacademy.ru/intensives/javascript-3/hotel/19.jpg`,
+        `https://assets.htmlacademy.ru/intensives/javascript-3/hotel/20.jpg`,
+        `https://assets.htmlacademy.ru/intensives/javascript-3/hotel/21.jpg`,
+        `https://assets.htmlacademy.ru/intensives/javascript-3/hotel/22.jpg`,
+        `https://assets.htmlacademy.ru/intensives/javascript-3/hotel/23.jpg`,
+        `https://assets.htmlacademy.ru/intensives/javascript-3/hotel/24.jpg`,
+        `https://assets.htmlacademy.ru/intensives/javascript-3/hotel/25.jpg`
+      ],
       title: `Tile House`,
       rating: 2,
       type: `house`,

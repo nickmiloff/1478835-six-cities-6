@@ -66,7 +66,8 @@ const ReviewForm = ({onSubmit, isLoaded}) => {
           setReview(evt.target.value);
         }}
         maxLength={REVIEW_SIZING.max}
-        disabled={isLoaded === Statuses.LOAD}></textarea>
+        disabled={isLoaded === Statuses.LOAD}
+        data-testid="review"></textarea>
       <div className="reviews__button-wrapper">
         <p className="reviews__help">
           To submit review please make sure to set <span className="reviews__star">rating</span> and describe your stay with at least <b className="reviews__text-amount">50 characters</b>.

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlacesEmpty component test PlacesEmpty component' should render correctly 1`] = `
+<div>
+  <section
+    class="cities__no-places"
+  >
+    <div
+      class="cities__status-wrapper tabs__content"
+    >
+      <b
+        class="cities__status"
+      >
+        No places to stay available
+      </b>
+      <p
+        class="cities__status-description"
+      >
+        We could not find any property available at the moment in 
+        Paris
+      </p>
+    </div>
+  </section>
+</div>
+`;

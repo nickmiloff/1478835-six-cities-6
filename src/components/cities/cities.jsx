@@ -11,7 +11,7 @@ const Cities = ({cards, location, isEmpty}) => {
     <div className="cities">
       <div className={`cities__places-container container${isEmpty && ` cities__places-container--empty` || ``}`}>
         {isEmpty
-          && <PlacesEmpty />
+          && <PlacesEmpty location={location} />
           || <Places cards={cards} location={location} setActiveCardId={setActiveCardId} />}
         <div className="cities__right-section">
           {!isEmpty

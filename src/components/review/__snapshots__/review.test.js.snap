@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Review component test Review component' should render correctly 1`] = `
+<div>
+  <li
+    class="reviews__item"
+  >
+    <div
+      class="reviews__user user"
+    >
+      <div
+        class="reviews__avatar-wrapper user__avatar-wrapper"
+      >
+        <img
+          alt="Reviews avatar"
+          class="reviews__avatar user__avatar"
+          height="54"
+          src="img/1.png"
+          width="54"
+        />
+      </div>
+      <span
+        class="reviews__user-name"
+      >
+        Max
+      </span>
+    </div>
+    <div
+      class="reviews__info"
+    >
+      <div
+        class="reviews__rating rating"
+      >
+        <div
+          class="reviews__stars rating__stars"
+        >
+          <span
+            style="width: 80%;"
+          />
+          <span
+            class="visually-hidden"
+          >
+            Rating
+          </span>
+        </div>
+      </div>
+      <p
+        class="reviews__text"
+      >
+        A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+      </p>
+      <time
+        class="reviews__time"
+        datetime="2019-05-08T14:13:56.569Z"
+      >
+        2019-5-8
+      </time>
+    </div>
+  </li>
+</div>
+`;
