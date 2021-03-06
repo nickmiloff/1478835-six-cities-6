@@ -7,7 +7,7 @@ const ERROR_TIMEOUT = 5000;
 
 export const loadOffer = (id) => (dispatch, _getState, api) => {
   dispatch(actions.setLoaded(Statuses.LOAD));
-  Promise.all([
+  return Promise.all([
     api.get(`hotels/${id}`),
     api.get(`hotels/${id}/nearby`),
     api.get(`comments/${id}`)
@@ -25,7 +25,7 @@ export const loadOffer = (id) => (dispatch, _getState, api) => {
 
 export const sendComment = (id, comment, rating) => (dispatch, _getState, api) => {
   dispatch(actions.setReviewLoaded(Statuses.LOAD));
-  api.post(`comments/${id}/`, {comment, rating})
+  return api.post(`comments/${id}`, {comment, rating})
     .then(({data}) => {
       dispatch(actions.setReviews(data.map(dataToComment)));
       dispatch(actions.setReviewLoaded(Statuses.LOADED));
@@ -39,7 +39,7 @@ export const sendComment = (id, comment, rating) => (dispatch, _getState, api) =
 };
 
 export const changeFavorite = (id, status) => (dispatch, _getState, api) => {
-  api.post(`favorite/${id}/${Number(status)}`)
+  return api.post(`favorite/${id}/${Number(status)}`)
     .then(({data}) => {
       dispatch(actions.setOffer(dataToHotelCard(data)));
       dispatch(mainActions.changeCard(dataToHotelCard(data)));
@@ -50,7 +50,7 @@ export const changeFavorite = (id, status) => (dispatch, _getState, api) => {
 };
 
 export const changeNearbyFavorite = (id, status) => (dispatch, _getState, api) => {
-  api.post(`favorite/${id}/${Number(status)}`)
+  return api.post(`favorite/${id}/${Number(status)}`)
     .then(({data}) => {
       dispatch(actions.changeNearby(dataToHotelCard(data)));
       dispatch(mainActions.changeCard(dataToHotelCard(data)));

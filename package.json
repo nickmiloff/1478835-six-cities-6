@@ -5,15 +5,18 @@
   "description": "Личный проект «Шесть городов» от HTML Academy",
   "scripts": {
     "eslint": "eslint --ext .jsx --ext .js src/",
-    "test": "npm run eslint",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "test": "npm run eslint && npm run test.jest",
+    "test.jest": "jest"
   },
   "devDependencies": {
     "@babel/core": "7.12.10",
     "@babel/preset-env": "7.12.11",
     "@babel/preset-react": "7.12.10",
     "@testing-library/react": "11.2.3",
+    "@testing-library/jest-dom": "5.11.9",
+    "@testing-library/user-event": "12.8.1",
     "axios-mock-adapter": "1.19.0",
     "babel-loader": "8.2.2",
     "css-loader": "5.0.1",
@@ -42,5 +45,13 @@
     "react-redux": "7.2.2",
     "react-router-dom": "5.2.0",
     "reselect": "4.0.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|less)$": "<rootDir>/src/style-mock.js"
+    },
+    "testPathIgnorePatterns": [
+      "<rootDir>/src/components/test/test.js"
+    ]
   }
 }

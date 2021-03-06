@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test component test 'Test component' should render correctly 1`] = `
+<div>
+  <div />
+</div>
+`;
+
+exports[`Test component test 'TestHistory component' should render correctly 1`] = `
+<div>
+  <div />
+</div>
+`;
+
+exports[`Test component test 'TestStore component' should render correctly 1`] = `
+<div>
+  <div />
+</div>
+`;

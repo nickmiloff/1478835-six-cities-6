@@ -28,7 +28,8 @@ const LoginForm = ({onSubmit}) => {
           value={email}
           onChange={(evt) => {
             setEmail(evt.target.value);
-          }}/>
+          }}
+          data-testid="email" />
       </div>
       <div className="login__input-wrapper form__input-wrapper">
         <label className="visually-hidden">Password</label>
@@ -42,7 +43,8 @@ const LoginForm = ({onSubmit}) => {
           value={password}
           onChange={(evt) => {
             setPassword(evt.target.value);
-          }}/>
+          }}
+          data-testid="password" />
       </div>
       <button className="login__submit form__submit button" type="submit">Sign in</button>
     </form>

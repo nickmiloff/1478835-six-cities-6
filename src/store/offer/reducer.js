@@ -63,3 +63,6 @@ const offerReducer = createReducer(initialState, (builder) => {
 });
 
 export default offerReducer;
+export {
+  initialState
+};

@@ -1,0 +1,522 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cities component test 'Cities component' should render correctly with cards 1`] = `
+<div>
+  <div
+    class="cities"
+  >
+    <div
+      class="cities__places-container container"
+    >
+      <section
+        class="cities__places places"
+      >
+        <h2
+          class="visually-hidden"
+        >
+          Places
+        </h2>
+        <b
+          class="places__found"
+        >
+          3
+           places to stay in 
+          Paris
+        </b>
+        <form
+          action="#"
+          class="places__sorting"
+          method="get"
+        >
+          <span
+            class="places__sorting-caption"
+          >
+            Sort by
+          </span>
+          <span
+            class="places__sorting-type"
+            tabindex="0"
+          >
+            Popular
+            <svg
+              class="places__sorting-arrow"
+              height="4"
+              width="7"
+            >
+              <use
+                xlink:href="#icon-arrow-select"
+              />
+            </svg>
+          </span>
+          <ul
+            class="places__options places__options--custom"
+          >
+            <li
+              class="places__option places__option--active\\""
+              tabindex="0"
+            >
+              Popular
+            </li>
+            <li
+              class="places__option"
+              tabindex="0"
+            >
+              Price: low to high
+            </li>
+            <li
+              class="places__option"
+              tabindex="0"
+            >
+              Price: high to low
+            </li>
+            <li
+              class="places__option"
+              tabindex="0"
+            >
+              Top rated first
+            </li>
+          </ul>
+        </form>
+        <div
+          class="cities__places-list places__list tabs__content"
+        >
+          <article
+            class="cities__place-card place-card"
+          >
+            <div
+              class="place-card__mark"
+            >
+              <span>
+                Premium
+              </span>
+            </div>
+            <div
+              class="cities__image-wrapper place-card__image-wrapper"
+            >
+              <a
+                href="/offer/1"
+              >
+                <img
+                  alt="Place image"
+                  class="place-card__image"
+                  height="200"
+                  src="https://assets.htmlacademy.ru/intensives/javascript-3/hotel/19.jpg"
+                  width="260"
+                />
+              </a>
+            </div>
+            <div
+              class="place-card__info"
+            >
+              <div
+                class="place-card__price-wrapper"
+              >
+                <div
+                  class="place-card__price"
+                >
+                  <b
+                    class="place-card__price-value"
+                  >
+                    €
+                    161
+                  </b>
+                  <span
+                    class="place-card__price-text"
+                  >
+                    / night
+                  </span>
+                </div>
+                <button
+                  class="place-card__bookmark-button button"
+                  type="button"
+                >
+                  <svg
+                    class="place-card__bookmark-icon"
+                    height="19"
+                    width="18"
+                  >
+                    <use
+                      xlink:href="#icon-bookmark"
+                    />
+                  </svg>
+                  <span
+                    class="visually-hidden"
+                  >
+                    To bookmarks
+                  </span>
+                </button>
+              </div>
+              <div
+                class="place-card__rating rating"
+              >
+                <div
+                  class="place-card__stars rating__stars"
+                >
+                  <span
+                    style="width: 40%;"
+                  />
+                  <span
+                    class="visually-hidden"
+                  >
+                    Rating
+                  </span>
+                </div>
+              </div>
+              <h2
+                class="place-card__name"
+              >
+                <a
+                  href="/offer/1"
+                >
+                  Tile House
+                </a>
+              </h2>
+              <p
+                class="place-card__type"
+              >
+                house
+              </p>
+            </div>
+          </article>
+          <article
+            class="cities__place-card place-card"
+          >
+            
+            <div
+              class="cities__image-wrapper place-card__image-wrapper"
+            >
+              <a
+                href="/offer/2"
+              >
+                <img
+                  alt="Place image"
+                  class="place-card__image"
+                  height="200"
+                  src="https://assets.htmlacademy.ru/intensives/javascript-3/hotel/6.jpg"
+                  width="260"
+                />
+              </a>
+            </div>
+            <div
+              class="place-card__info"
+            >
+              <div
+                class="place-card__price-wrapper"
+              >
+                <div
+                  class="place-card__price"
+                >
+                  <b
+                    class="place-card__price-value"
+                  >
+                    €
+                    271
+                  </b>
+                  <span
+                    class="place-card__price-text"
+                  >
+                    / night
+                  </span>
+                </div>
+                <button
+                  class="place-card__bookmark-button button"
+                  type="button"
+                >
+                  <svg
+                    class="place-card__bookmark-icon"
+                    height="19"
+                    width="18"
+                  >
+                    <use
+                      xlink:href="#icon-bookmark"
+                    />
+                  </svg>
+                  <span
+                    class="visually-hidden"
+                  >
+                    To bookmarks
+                  </span>
+                </button>
+              </div>
+              <div
+                class="place-card__rating rating"
+              >
+                <div
+                  class="place-card__stars rating__stars"
+                >
+                  <span
+                    style="width: 72%;"
+                  />
+                  <span
+                    class="visually-hidden"
+                  >
+                    Rating
+                  </span>
+                </div>
+              </div>
+              <h2
+                class="place-card__name"
+              >
+                <a
+                  href="/offer/2"
+                >
+                  Loft Studio in the Central Area
+                </a>
+              </h2>
+              <p
+                class="place-card__type"
+              >
+                apartment
+              </p>
+            </div>
+          </article>
+          <article
+            class="cities__place-card place-card"
+          >
+            
+            <div
+              class="cities__image-wrapper place-card__image-wrapper"
+            >
+              <a
+                href="/offer/3"
+              >
+                <img
+                  alt="Place image"
+                  class="place-card__image"
+                  height="200"
+                  src="https://assets.htmlacademy.ru/intensives/javascript-3/hotel/6.jpg"
+                  width="260"
+                />
+              </a>
+            </div>
+            <div
+              class="place-card__info"
+            >
+              <div
+                class="place-card__price-wrapper"
+              >
+                <div
+                  class="place-card__price"
+                >
+                  <b
+                    class="place-card__price-value"
+                  >
+                    €
+                    865
+                  </b>
+                  <span
+                    class="place-card__price-text"
+                  >
+                    / night
+                  </span>
+                </div>
+                <button
+                  class="place-card__bookmark-button button place-card__bookmark-button--active"
+                  type="button"
+                >
+                  <svg
+                    class="place-card__bookmark-icon"
+                    height="19"
+                    width="18"
+                  >
+                    <use
+                      xlink:href="#icon-bookmark"
+                    />
+                  </svg>
+                  <span
+                    class="visually-hidden"
+                  >
+                    To bookmarks
+                  </span>
+                </button>
+              </div>
+              <div
+                class="place-card__rating rating"
+              >
+                <div
+                  class="place-card__stars rating__stars"
+                >
+                  <span
+                    style="width: 92%;"
+                  />
+                  <span
+                    class="visually-hidden"
+                  >
+                    Rating
+                  </span>
+                </div>
+              </div>
+              <h2
+                class="place-card__name"
+              >
+                <a
+                  href="/offer/3"
+                >
+                  Tile House
+                </a>
+              </h2>
+              <p
+                class="place-card__type"
+              >
+                house
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <div
+        class="cities__right-section"
+      >
+        <section
+          class="cities__map map"
+        >
+          <div
+            class="leaflet-container leaflet-grab leaflet-touch-drag"
+            id="map"
+            style="width: 100%; height: 100%; position: relative;"
+            tabindex="0"
+          >
+            <div
+              class="leaflet-pane leaflet-map-pane"
+              style="left: 0px; top: 0px;"
+            >
+              <div
+                class="leaflet-pane leaflet-tile-pane"
+              >
+                <div
+                  class="leaflet-layer "
+                  style="z-index: 1;"
+                >
+                  <div
+                    class="leaflet-tile-container leaflet-zoom-animated"
+                    style="z-index: 18; left: 0px; top: 0px;"
+                  >
+                    <img
+                      alt=""
+                      class="leaflet-tile"
+                      role="presentation"
+                      src="https://a.basemaps.cartocdn.com/rastertiles/voyager/12/2074/1409.png"
+                      style="width: 256px; height: 256px; left: -180px; top: -26px;"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="leaflet-pane leaflet-shadow-pane"
+              />
+              <div
+                class="leaflet-pane leaflet-overlay-pane"
+              />
+              <div
+                class="leaflet-pane leaflet-marker-pane"
+              >
+                <img
+                  alt=""
+                  class="leaflet-marker-icon leaflet-zoom-hide leaflet-interactive"
+                  src="img/pin.svg"
+                  style="margin-left: -15px; margin-top: -15px; width: 30px; height: 30px; left: 34px; top: 5px; z-index: 5;"
+                  tabindex="0"
+                />
+                <img
+                  alt=""
+                  class="leaflet-marker-icon leaflet-zoom-hide leaflet-interactive"
+                  src="img/pin.svg"
+                  style="margin-left: -15px; margin-top: -15px; width: 30px; height: 30px; left: 7436px; top: -16216px; z-index: -16216;"
+                  tabindex="0"
+                />
+                <img
+                  alt=""
+                  class="leaflet-marker-icon leaflet-zoom-hide leaflet-interactive"
+                  src="img/pin.svg"
+                  style="margin-left: -15px; margin-top: -15px; width: 30px; height: 30px; left: 10px; top: 90px; z-index: 90;"
+                  tabindex="0"
+                />
+              </div>
+              <div
+                class="leaflet-pane leaflet-tooltip-pane"
+              />
+              <div
+                class="leaflet-pane leaflet-popup-pane"
+              />
+            </div>
+            <div
+              class="leaflet-control-container"
+            >
+              <div
+                class="leaflet-top leaflet-left"
+              />
+              <div
+                class="leaflet-top leaflet-right"
+              />
+              <div
+                class="leaflet-bottom leaflet-left"
+              />
+              <div
+                class="leaflet-bottom leaflet-right"
+              >
+                <div
+                  class="leaflet-control-attribution leaflet-control"
+                >
+                  <a
+                    href="https://leafletjs.com"
+                    title="A JS library for interactive maps"
+                  >
+                    Leaflet
+                  </a>
+                   | © 
+                  <a
+                    href="https://www.openstreetmap.org/copyright"
+                  >
+                    OpenStreetMap
+                  </a>
+                   contributors © 
+                  <a
+                    href="https://carto.com/attributions"
+                  >
+                    CARTO
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cities component test 'Cities component' should render correctly with no cards 1`] = `
+<div>
+  <div
+    class="cities"
+  >
+    <div
+      class="cities__places-container container cities__places-container--empty"
+    >
+      <section
+        class="cities__no-places"
+      >
+        <div
+          class="cities__status-wrapper tabs__content"
+        >
+          <b
+            class="cities__status"
+          >
+            No places to stay available
+          </b>
+          <p
+            class="cities__status-description"
+          >
+            We could not find any property available at the moment in 
+            Paris
+          </p>
+        </div>
+      </section>
+      <div
+        class="cities__right-section"
+      />
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,478 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OfferInfo component test OfferInfo component' should render correctly 1`] = `
+<div>
+  <section
+    class="property"
+  >
+    <div
+      class="property__gallery-container container"
+    >
+      <div
+        class="property__gallery"
+      >
+        <div
+          class="property__image-wrapper"
+        >
+          <img
+            alt="Photo studio"
+            class="property__image"
+            src="https://assets.htmlacademy.ru/intensives/javascript-3/hotel/19.jpg"
+          />
+        </div>
+        <div
+          class="property__image-wrapper"
+        >
+          <img
+            alt="Photo studio"
+            class="property__image"
+            src="https://assets.htmlacademy.ru/intensives/javascript-3/hotel/20.jpg"
+          />
+        </div>
+        <div
+          class="property__image-wrapper"
+        >
+          <img
+            alt="Photo studio"
+            class="property__image"
+            src="https://assets.htmlacademy.ru/intensives/javascript-3/hotel/21.jpg"
+          />
+        </div>
+        <div
+          class="property__image-wrapper"
+        >
+          <img
+            alt="Photo studio"
+            class="property__image"
+            src="https://assets.htmlacademy.ru/intensives/javascript-3/hotel/22.jpg"
+          />
+        </div>
+        <div
+          class="property__image-wrapper"
+        >
+          <img
+            alt="Photo studio"
+            class="property__image"
+            src="https://assets.htmlacademy.ru/intensives/javascript-3/hotel/23.jpg"
+          />
+        </div>
+        <div
+          class="property__image-wrapper"
+        >
+          <img
+            alt="Photo studio"
+            class="property__image"
+            src="https://assets.htmlacademy.ru/intensives/javascript-3/hotel/24.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="property__container container"
+    >
+      <div
+        class="property__wrapper"
+      >
+        <div
+          class="property__mark"
+        >
+          <span>
+            Premium
+          </span>
+        </div>
+        <div
+          class="property__name-wrapper"
+        >
+          <h1
+            class="property__name"
+          >
+            Tile House
+          </h1>
+          <button
+            class="property__bookmark-button button"
+            type="button"
+          >
+            <svg
+              class="property__bookmark-icon"
+              height="33"
+              width="31"
+            >
+              <use
+                xlink:href="#icon-bookmark"
+              />
+            </svg>
+            <span
+              class="visually-hidden"
+            >
+              To bookmarks
+            </span>
+          </button>
+        </div>
+        <div
+          class="property__rating rating"
+        >
+          <div
+            class="property__stars rating__stars"
+          >
+            <span
+              style="width: 40%;"
+            />
+            <span
+              class="visually-hidden"
+            >
+              Rating
+            </span>
+          </div>
+          <span
+            class="property__rating-value rating__value"
+          >
+            2
+          </span>
+        </div>
+        <ul
+          class="property__features"
+        >
+          <li
+            class="property__feature property__feature--entire"
+          >
+            house
+          </li>
+          <li
+            class="property__feature property__feature--bedrooms"
+          >
+            2
+             Bedrooms
+          </li>
+          <li
+            class="property__feature property__feature--adults"
+          >
+            Max 
+            9
+             adults
+          </li>
+        </ul>
+        <div
+          class="property__price"
+        >
+          <b
+            class="property__price-value"
+          >
+            €
+            161
+          </b>
+          <span
+            class="property__price-text"
+          >
+             night
+          </span>
+        </div>
+        <div
+          class="property__inside"
+        >
+          <h2
+            class="property__inside-title"
+          >
+            What's inside
+          </h2>
+          <ul
+            class="property__inside-list"
+          >
+            <li
+              class="property__inside-item"
+            >
+              Laptop friendly workspace
+            </li>
+          </ul>
+        </div>
+        <div
+          class="property__host"
+        >
+          <h2
+            class="property__host-title"
+          >
+            Meet the host
+          </h2>
+          <div
+            class="property__host-user user"
+          >
+            <div
+              class="property__avatar-wrapper user__avatar-wrapper property__avatar-wrapper--pro"
+            >
+              <img
+                alt="Host avatar"
+                class="property__avatar user__avatar"
+                height="74"
+                src="img/avatar-angelina.jpg"
+                width="74"
+              />
+            </div>
+            <span
+              class="property__user-name"
+            >
+              Angelina
+            </span>
+          </div>
+          <div
+            class="property__description"
+          >
+            <p
+              class="property__text"
+            >
+              Relax, rejuvenate and unplug in this ultimate rustic getaway experience in the country. In our beautiful screened Pondhouse, you can gaze at the stars and listen to the sounds of nature from your cozy warm bed.
+            </p>
+          </div>
+        </div>
+        <section
+          class="property__reviews reviews"
+        >
+          <h2
+            class="reviews__title"
+          >
+            Reviews · 
+            <span
+              class="reviews__amount"
+            >
+              2
+            </span>
+          </h2>
+          <ul
+            class="reviews__list"
+          >
+            <li
+              class="reviews__item"
+            >
+              <div
+                class="reviews__user user"
+              >
+                <div
+                  class="reviews__avatar-wrapper user__avatar-wrapper"
+                >
+                  <img
+                    alt="Reviews avatar"
+                    class="reviews__avatar user__avatar"
+                    height="54"
+                    src="img/1.png"
+                    width="54"
+                  />
+                </div>
+                <span
+                  class="reviews__user-name"
+                >
+                  Max
+                </span>
+              </div>
+              <div
+                class="reviews__info"
+              >
+                <div
+                  class="reviews__rating rating"
+                >
+                  <div
+                    class="reviews__stars rating__stars"
+                  >
+                    <span
+                      style="width: 80%;"
+                    />
+                    <span
+                      class="visually-hidden"
+                    >
+                      Rating
+                    </span>
+                  </div>
+                </div>
+                <p
+                  class="reviews__text"
+                >
+                  A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+                </p>
+                <time
+                  class="reviews__time"
+                  datetime="2019-05-08T14:13:56.569Z"
+                >
+                  May 2019
+                </time>
+              </div>
+            </li>
+            <li
+              class="reviews__item"
+            >
+              <div
+                class="reviews__user user"
+              >
+                <div
+                  class="reviews__avatar-wrapper user__avatar-wrapper"
+                >
+                  <img
+                    alt="Reviews avatar"
+                    class="reviews__avatar user__avatar"
+                    height="54"
+                    src="img/2.png"
+                    width="54"
+                  />
+                </div>
+                <span
+                  class="reviews__user-name"
+                >
+                  Vadim
+                </span>
+              </div>
+              <div
+                class="reviews__info"
+              >
+                <div
+                  class="reviews__rating rating"
+                >
+                  <div
+                    class="reviews__stars rating__stars"
+                  >
+                    <span
+                      style="width: 60%;"
+                    />
+                    <span
+                      class="visually-hidden"
+                    >
+                      Rating
+                    </span>
+                  </div>
+                </div>
+                <p
+                  class="reviews__text"
+                >
+                  A quiet of Amsterdam.
+                </p>
+                <time
+                  class="reviews__time"
+                  datetime="2019-06-08T14:13:56.569Z"
+                >
+                  June 2019
+                </time>
+              </div>
+            </li>
+          </ul>
+          
+        </section>
+      </div>
+    </div>
+    <section
+      class="property__map map"
+    >
+      <div
+        class="leaflet-container leaflet-grab leaflet-touch-drag"
+        id="map"
+        style="width: 100%; height: 100%; position: relative;"
+        tabindex="0"
+      >
+        <div
+          class="leaflet-pane leaflet-map-pane"
+          style="left: 0px; top: 0px;"
+        >
+          <div
+            class="leaflet-pane leaflet-tile-pane"
+          >
+            <div
+              class="leaflet-layer "
+              style="z-index: 1;"
+            >
+              <div
+                class="leaflet-tile-container leaflet-zoom-animated"
+                style="z-index: 18; left: 0px; top: 0px;"
+              >
+                <img
+                  alt=""
+                  class="leaflet-tile"
+                  role="presentation"
+                  src="https://a.basemaps.cartocdn.com/rastertiles/voyager/12/2074/1409.png"
+                  style="width: 256px; height: 256px; left: -214px; top: -31px;"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="leaflet-pane leaflet-shadow-pane"
+          />
+          <div
+            class="leaflet-pane leaflet-overlay-pane"
+          />
+          <div
+            class="leaflet-pane leaflet-marker-pane"
+          >
+            <img
+              alt=""
+              class="leaflet-marker-icon leaflet-zoom-hide leaflet-interactive"
+              src="img/pin-active.svg"
+              style="margin-left: -15px; margin-top: -15px; width: 30px; height: 30px; left: 0px; top: 0px; z-index: 0;"
+              tabindex="0"
+            />
+            <img
+              alt=""
+              class="leaflet-marker-icon leaflet-zoom-hide leaflet-interactive"
+              src="img/pin.svg"
+              style="margin-left: -15px; margin-top: -15px; width: 30px; height: 30px; left: 7402px; top: -16221px; z-index: -16221;"
+              tabindex="0"
+            />
+            <img
+              alt=""
+              class="leaflet-marker-icon leaflet-zoom-hide leaflet-interactive"
+              src="img/pin.svg"
+              style="margin-left: -15px; margin-top: -15px; width: 30px; height: 30px; left: -24px; top: 85px; z-index: 85;"
+              tabindex="0"
+            />
+            <img
+              alt=""
+              class="leaflet-marker-icon leaflet-zoom-hide leaflet-interactive"
+              src="img/pin-active.svg"
+              style="margin-left: -15px; margin-top: -15px; width: 30px; height: 30px; left: 0px; top: 0px; z-index: 0;"
+              tabindex="0"
+            />
+          </div>
+          <div
+            class="leaflet-pane leaflet-tooltip-pane"
+          />
+          <div
+            class="leaflet-pane leaflet-popup-pane"
+          />
+        </div>
+        <div
+          class="leaflet-control-container"
+        >
+          <div
+            class="leaflet-top leaflet-left"
+          />
+          <div
+            class="leaflet-top leaflet-right"
+          />
+          <div
+            class="leaflet-bottom leaflet-left"
+          />
+          <div
+            class="leaflet-bottom leaflet-right"
+          >
+            <div
+              class="leaflet-control-attribution leaflet-control"
+            >
+              <a
+                href="https://leafletjs.com"
+                title="A JS library for interactive maps"
+              >
+                Leaflet
+              </a>
+               | © 
+              <a
+                href="https://www.openstreetmap.org/copyright"
+              >
+                OpenStreetMap
+              </a>
+               contributors © 
+              <a
+                href="https://carto.com/attributions"
+              >
+                CARTO
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+</div>
+`;

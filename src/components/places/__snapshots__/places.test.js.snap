@@ -1,0 +1,362 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Places component test Places component' should render correctly 1`] = `
+<div>
+  <section
+    class="cities__places places"
+  >
+    <h2
+      class="visually-hidden"
+    >
+      Places
+    </h2>
+    <b
+      class="places__found"
+    >
+      3
+       places to stay in 
+      Paris
+    </b>
+    <form
+      action="#"
+      class="places__sorting"
+      method="get"
+    >
+      <span
+        class="places__sorting-caption"
+      >
+        Sort by
+      </span>
+      <span
+        class="places__sorting-type"
+        tabindex="0"
+      >
+        Popular
+        <svg
+          class="places__sorting-arrow"
+          height="4"
+          width="7"
+        >
+          <use
+            xlink:href="#icon-arrow-select"
+          />
+        </svg>
+      </span>
+      <ul
+        class="places__options places__options--custom"
+      >
+        <li
+          class="places__option places__option--active\\""
+          tabindex="0"
+        >
+          Popular
+        </li>
+        <li
+          class="places__option"
+          tabindex="0"
+        >
+          Price: low to high
+        </li>
+        <li
+          class="places__option"
+          tabindex="0"
+        >
+          Price: high to low
+        </li>
+        <li
+          class="places__option"
+          tabindex="0"
+        >
+          Top rated first
+        </li>
+      </ul>
+    </form>
+    <div
+      class="cities__places-list places__list tabs__content"
+    >
+      <article
+        class="cities__place-card place-card"
+      >
+        <div
+          class="place-card__mark"
+        >
+          <span>
+            Premium
+          </span>
+        </div>
+        <div
+          class="cities__image-wrapper place-card__image-wrapper"
+        >
+          <a
+            href="/offer/1"
+          >
+            <img
+              alt="Place image"
+              class="place-card__image"
+              height="200"
+              src="https://assets.htmlacademy.ru/intensives/javascript-3/hotel/19.jpg"
+              width="260"
+            />
+          </a>
+        </div>
+        <div
+          class="place-card__info"
+        >
+          <div
+            class="place-card__price-wrapper"
+          >
+            <div
+              class="place-card__price"
+            >
+              <b
+                class="place-card__price-value"
+              >
+                €
+                161
+              </b>
+              <span
+                class="place-card__price-text"
+              >
+                / night
+              </span>
+            </div>
+            <button
+              class="place-card__bookmark-button button"
+              type="button"
+            >
+              <svg
+                class="place-card__bookmark-icon"
+                height="19"
+                width="18"
+              >
+                <use
+                  xlink:href="#icon-bookmark"
+                />
+              </svg>
+              <span
+                class="visually-hidden"
+              >
+                To bookmarks
+              </span>
+            </button>
+          </div>
+          <div
+            class="place-card__rating rating"
+          >
+            <div
+              class="place-card__stars rating__stars"
+            >
+              <span
+                style="width: 40%;"
+              />
+              <span
+                class="visually-hidden"
+              >
+                Rating
+              </span>
+            </div>
+          </div>
+          <h2
+            class="place-card__name"
+          >
+            <a
+              href="/offer/1"
+            >
+              Tile House
+            </a>
+          </h2>
+          <p
+            class="place-card__type"
+          >
+            house
+          </p>
+        </div>
+      </article>
+      <article
+        class="cities__place-card place-card"
+      >
+        
+        <div
+          class="cities__image-wrapper place-card__image-wrapper"
+        >
+          <a
+            href="/offer/2"
+          >
+            <img
+              alt="Place image"
+              class="place-card__image"
+              height="200"
+              src="https://assets.htmlacademy.ru/intensives/javascript-3/hotel/6.jpg"
+              width="260"
+            />
+          </a>
+        </div>
+        <div
+          class="place-card__info"
+        >
+          <div
+            class="place-card__price-wrapper"
+          >
+            <div
+              class="place-card__price"
+            >
+              <b
+                class="place-card__price-value"
+              >
+                €
+                271
+              </b>
+              <span
+                class="place-card__price-text"
+              >
+                / night
+              </span>
+            </div>
+            <button
+              class="place-card__bookmark-button button"
+              type="button"
+            >
+              <svg
+                class="place-card__bookmark-icon"
+                height="19"
+                width="18"
+              >
+                <use
+                  xlink:href="#icon-bookmark"
+                />
+              </svg>
+              <span
+                class="visually-hidden"
+              >
+                To bookmarks
+              </span>
+            </button>
+          </div>
+          <div
+            class="place-card__rating rating"
+          >
+            <div
+              class="place-card__stars rating__stars"
+            >
+              <span
+                style="width: 72%;"
+              />
+              <span
+                class="visually-hidden"
+              >
+                Rating
+              </span>
+            </div>
+          </div>
+          <h2
+            class="place-card__name"
+          >
+            <a
+              href="/offer/2"
+            >
+              Loft Studio in the Central Area
+            </a>
+          </h2>
+          <p
+            class="place-card__type"
+          >
+            apartment
+          </p>
+        </div>
+      </article>
+      <article
+        class="cities__place-card place-card"
+      >
+        
+        <div
+          class="cities__image-wrapper place-card__image-wrapper"
+        >
+          <a
+            href="/offer/3"
+          >
+            <img
+              alt="Place image"
+              class="place-card__image"
+              height="200"
+              src="https://assets.htmlacademy.ru/intensives/javascript-3/hotel/6.jpg"
+              width="260"
+            />
+          </a>
+        </div>
+        <div
+          class="place-card__info"
+        >
+          <div
+            class="place-card__price-wrapper"
+          >
+            <div
+              class="place-card__price"
+            >
+              <b
+                class="place-card__price-value"
+              >
+                €
+                865
+              </b>
+              <span
+                class="place-card__price-text"
+              >
+                / night
+              </span>
+            </div>
+            <button
+              class="place-card__bookmark-button button place-card__bookmark-button--active"
+              type="button"
+            >
+              <svg
+                class="place-card__bookmark-icon"
+                height="19"
+                width="18"
+              >
+                <use
+                  xlink:href="#icon-bookmark"
+                />
+              </svg>
+              <span
+                class="visually-hidden"
+              >
+                To bookmarks
+              </span>
+            </button>
+          </div>
+          <div
+            class="place-card__rating rating"
+          >
+            <div
+              class="place-card__stars rating__stars"
+            >
+              <span
+                style="width: 92%;"
+              />
+              <span
+                class="visually-hidden"
+              >
+                Rating
+              </span>
+            </div>
+          </div>
+          <h2
+            class="place-card__name"
+          >
+            <a
+              href="/offer/3"
+            >
+              Tile House
+            </a>
+          </h2>
+          <p
+            class="place-card__type"
+          >
+            house
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+</div>
+`;

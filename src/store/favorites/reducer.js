@@ -25,3 +25,6 @@ const favoritesReducer = createReducer(initialState, (builder) => {
 });
 
 export default favoritesReducer;
+export {
+  initialState
+};

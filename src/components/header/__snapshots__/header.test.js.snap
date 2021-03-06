@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component test 'Header component' should render correctly with authorized user 1`] = `
+<div>
+  <header
+    class="header"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="header__wrapper"
+      >
+        <div
+          class="header__left"
+        >
+          <a
+            class="header__logo-link header__logo-link--active"
+            href="/"
+          >
+            <img
+              alt="6 cities logo"
+              class="header__logo"
+              height="41"
+              src="img/logo.svg"
+              width="81"
+            />
+          </a>
+        </div>
+        <nav
+          class="header__nav"
+        >
+          <ul
+            class="header__nav-list"
+          >
+            <li
+              class="header__nav-item user"
+            >
+              <a
+                class="header__nav-link header__nav-link--profile"
+                href="/favorites"
+              >
+                <div
+                  class="header__avatar-wrapper user__avatar-wrapper"
+                />
+                <span
+                  class="header__user-name user__name"
+                >
+                  mail@gmail.com
+                </span>
+              </a>
+            </li>
+            <li
+              class="header__nav-item user"
+            >
+              <button
+                class="header__nav-link header__nav-link--profile"
+                style="background-color: transparent;"
+              >
+                <span
+                  class="header__login"
+                >
+                  Logout
+                </span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+</div>
+`;
+
+exports[`Header component test 'Header component' should render correctly with unauthorized user 1`] = `
+<div>
+  <header
+    class="header"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="header__wrapper"
+      >
+        <div
+          class="header__left"
+        >
+          <a
+            class="header__logo-link header__logo-link--active"
+            href="/"
+          >
+            <img
+              alt="6 cities logo"
+              class="header__logo"
+              height="41"
+              src="img/logo.svg"
+              width="81"
+            />
+          </a>
+        </div>
+        <nav
+          class="header__nav"
+        >
+          <ul
+            class="header__nav-list"
+          >
+            <li
+              class="header__nav-item user"
+            >
+              <a
+                class="header__nav-link header__nav-link--profile"
+                href="/login"
+              >
+                <div
+                  class="header__avatar-wrapper user__avatar-wrapper"
+                />
+                <span
+                  class="header__login"
+                >
+                  Sign in
+                </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+</div>
+`;

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spiner component test Spiner component' should render correctly 1`] = `
+<div>
+  <section
+    class="spiner"
+  >
+    <div
+      class="spiner__wrapper"
+    >
+      <div
+        class="spiner__spiner"
+      >
+        <div />
+      </div>
+    </div>
+  </section>
+</div>
+`;
