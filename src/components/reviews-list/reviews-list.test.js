@@ -7,11 +7,9 @@ import {comments} from '../../tests-mock';
 
 describe(`ReviewsList component test`, () => {
   it(`'ReviewsList component' should render correctly`, () => {
-    const REVIEWS = comments.adapted;
-
     const {container} = render(
         <Test>
-          <ReviewsList reviews={REVIEWS} />
+          <ReviewsList reviews={comments.adapted} />
         </Test>
     );
 

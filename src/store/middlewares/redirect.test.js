@@ -2,8 +2,8 @@ import {redirect} from './redirect';
 import * as types from './types';
 import * as actions from './actions';
 
-describe(`App async operation work correctly`, () => {
-  it(`Should make a correct API call to /login with checkAuth`, () => {
+describe(`Middlewares async operation work correctly`, () => {
+  it(`Should correctly redirect to '/'`, () => {
     const next = jest.fn();
 
     redirect(null)(next)(actions.redirectToRoute(`/`));

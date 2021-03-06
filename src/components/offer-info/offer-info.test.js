@@ -7,16 +7,12 @@ import {cardsFull, comments} from '../../tests-mock';
 
 describe(`OfferInfo component test`, () => {
   it(`OfferInfo component' should render correctly`, () => {
-    const OFFER = cardsFull.adapted[0];
-    const REVIEWS = comments.adapted;
-    const MAP_PLACES = cardsFull.adapted;
-
     const {container} = render(
         <Test>
           <OfferInfo
-            offer={OFFER}
-            reviews={REVIEWS}
-            mapPlaces={MAP_PLACES} />
+            offer={cardsFull.adapted[0]}
+            reviews={comments.adapted}
+            mapPlaces={cardsFull.adapted} />
         </Test>
     );
 

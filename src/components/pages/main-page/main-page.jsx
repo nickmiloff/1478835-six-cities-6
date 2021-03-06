@@ -7,7 +7,7 @@ import {setLocation} from '../../../store/main/actions';
 import Header from '../../header/header';
 import Locations from '../../locations/locations';
 import Cities from '../../cities/cities';
-import withLoading from '../../../hocs/withLoading';
+import withLoading from '../../../hocs/with-loading/with-loading';
 
 const MainPage = ({location, cards, onChangeLocation}) => {
   const isEmpty = !cards.length;

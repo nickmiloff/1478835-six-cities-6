@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Header from '../../header/header';
 import LoginForm from '../../login-form/login-form';
-import withAuth from '../../../hocs/withAuth';
+import withAuth from '../../../hocs/with-auth/with-auth';
 import {Redirect} from 'react-router-dom';
 
 const LoginPage = ({isAuth}) => {

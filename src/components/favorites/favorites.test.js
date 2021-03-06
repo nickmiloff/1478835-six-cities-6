@@ -7,11 +7,9 @@ import {cardsFull} from '../../tests-mock';
 
 describe(`Favorites component test`, () => {
   it(`'Favorites component' should render correctly`, () => {
-    const CARDS = cardsFull.adapted;
-
     const {container} = render(
         <Test>
-          <Favorites cards={CARDS} />
+          <Favorites cards={cardsFull.adapted} />
         </Test>
     );
 

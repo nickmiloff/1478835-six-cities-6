@@ -6,9 +6,7 @@ import {comments} from '../../tests-mock';
 
 describe(`Review component test`, () => {
   it(`Review component' should render correctly`, () => {
-    const REVIEW = comments.adapted[0];
-
-    const {container} = render(<Review {...REVIEW} />);
+    const {container} = render(<Review {...comments.adapted[0]} />);
 
     expect(container).toMatchSnapshot();
   });

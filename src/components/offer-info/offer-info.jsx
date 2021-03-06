@@ -6,7 +6,7 @@ import {useHistory} from 'react-router-dom';
 import {offerPropTypes} from '../../prop-types.prop';
 import Reviews from '../reviews/reviews';
 import Map from '../map/map';
-import withAuth from '../../hocs/withAuth';
+import withAuth from '../../hocs/with-auth/with-auth';
 import {changeFavorite} from '../../store/offer/operations';
 
 const RATING_PER_STAR = 20;

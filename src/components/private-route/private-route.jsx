@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Route, Redirect} from 'react-router-dom';
-import withAuth from '../../hocs/withAuth';
+import withAuth from '../../hocs/with-auth/with-auth';
 
 const PrivateRoute = ({component: Component, isAuth, ...params}) => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Link, useHistory} from 'react-router-dom';
-import withAuth from '../../hocs/withAuth';
+import withAuth from '../../hocs/with-auth/with-auth';
 import {cardPropTypes} from '../../prop-types.prop';
 
 const RATING_PER_STAR = 20;
@@ -99,6 +99,3 @@ Card.propTypes = {
 };
 
 export default withAuth(Card);
-export {
-  Card as PureCard
-};

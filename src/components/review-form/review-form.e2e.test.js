@@ -9,7 +9,7 @@ import {PureReviewForm as ReviewForm} from './review-form';
 
 describe(`ReviewForm component e2e test`, () => {
   it(`ReviewForm component' should correctly change field`, () => {
-    const REVIEW = `Some mock text here`;
+    const review = `Some mock text here`;
 
     const {getByTestId, getByDisplayValue} = render(
         <Test>
@@ -17,9 +17,8 @@ describe(`ReviewForm component e2e test`, () => {
         </Test>
     );
 
-    userEvent.type(getByTestId(`review`), REVIEW);
-
-    expect(getByDisplayValue(REVIEW)).toBeInTheDocument();
+    userEvent.type(getByTestId(`review`), review);
+    expect(getByDisplayValue(review)).toBeInTheDocument();
   });
 
   it(`LoginForm component' should call callback when submit form`, () => {
@@ -32,7 +31,6 @@ describe(`ReviewForm component e2e test`, () => {
     );
 
     fireEvent.submit(getByTestId(`form`));
-
     expect(handlerOnSubmit).toHaveBeenCalled();
   });
 });

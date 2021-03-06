@@ -5,35 +5,31 @@ import Map from './map';
 import {cardsFull} from '../../tests-mock';
 
 describe(`Map component test`, () => {
+  const activeLocation = `Paris`;
+
   it(`Map component' should render correctly with 'main' type and 'active card'`, () => {
-    const ACTIVE_LOCATION = `Paris`;
-    const CARDS = cardsFull.adapted;
-    const ACTIVE_CARD_ID = cardsFull.adapted[0].id;
-    const TYPE = `main`;
+    const type = `main`;
 
     const {container} = render(
         <Map
-          activeLocation={ACTIVE_LOCATION}
-          cards={CARDS}
-          activeCardId={ACTIVE_CARD_ID}
-          type={TYPE} />
+          activeLocation={activeLocation}
+          cards={cardsFull.adapted}
+          activeCardId={cardsFull.adapted[0].id}
+          type={type} />
     );
 
     expect(container).toMatchSnapshot();
   });
 
   it(`Map component' should render correctly with 'offer' type and without 'active card'`, () => {
-    const ACTIVE_LOCATION = `Paris`;
-    const CARDS = cardsFull.adapted;
-    const ACTIVE_CARD_ID = null;
-    const TYPE = `offer`;
+    const type = `offer`;
 
     const {container} = render(
         <Map
-          activeLocation={ACTIVE_LOCATION}
-          cards={CARDS}
-          activeCardId={ACTIVE_CARD_ID}
-          type={TYPE} />
+          activeLocation={activeLocation}
+          cards={cardsFull.adapted}
+          activeCardId={null}
+          type={type} />
     );
 
     expect(container).toMatchSnapshot();

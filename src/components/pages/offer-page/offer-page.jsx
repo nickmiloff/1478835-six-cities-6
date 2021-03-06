@@ -9,7 +9,7 @@ import OfferInfo from '../../offer-info/offer-info';
 import NearPlaces from '../../near-places/near-places';
 import {getIsLoaded, getNearby, getOffer, getReviews} from '../../../store/offer/selectors';
 import {loadOffer} from '../../../store/offer/operations';
-import withLoading from '../../../hocs/withLoading';
+import withLoading from '../../../hocs/with-loading/with-loading';
 
 const OfferPage = ({offer, nearby, reviews, onComponentMount}) => {
   const params = useParams();

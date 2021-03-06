@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withLoading HOC test 'withLoading HOC' should render correctly with 'load' status 1`] = `
+<div>
+  <section
+    class="spiner"
+  >
+    <div
+      class="spiner__wrapper"
+    >
+      <div
+        class="spiner__spiner"
+      >
+        <div />
+      </div>
+    </div>
+  </section>
+  <span />
+</div>
+`;
+
+exports[`withLoading HOC test 'withLoading HOC' should render correctly with 'loaded' status 1`] = `
+<div>
+  <span />
+</div>
+`;

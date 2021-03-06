@@ -7,14 +7,13 @@ import {cardsFull} from '../../tests-mock';
 
 describe(`Places component test`, () => {
   it(`Places component' should render correctly`, () => {
-    const CARDS = cardsFull.adapted;
-    const LOCATION = `Paris`;
+    const location = `Paris`;
 
     const {container} = render(
         <Test>
           <Places
-            cards={CARDS}
-            location={LOCATION}
+            cards={cardsFull.adapted}
+            location={location}
             setActiveCardId={() => {}} />
         </Test>
     );

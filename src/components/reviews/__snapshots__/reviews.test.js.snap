@@ -296,7 +296,7 @@ exports[`Reviews component test Reviews component' should render correctly with 
 </div>
 `;
 
-exports[`Reviews component test Reviews component' should render correctly with un-authorized user 1`] = `
+exports[`Reviews component test Reviews component' should render correctly with unauthorized user 1`] = `
 <div>
   <section
     class="property__reviews reviews"

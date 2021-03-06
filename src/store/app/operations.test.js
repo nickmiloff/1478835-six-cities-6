@@ -39,7 +39,6 @@ describe(`App async operation work correctly`, () => {
     return loginOperation(dispatch, () => {}, api)
       .then(() => {
         expect(dispatch).toHaveBeenCalledTimes(3);
-
         expect(dispatch).toHaveBeenNthCalledWith(1, {
           type: types.SET_AUTH,
           payload: auth.adapted,
@@ -63,7 +62,6 @@ describe(`App async operation work correctly`, () => {
     return logoutOperation(dispatch, () => {}, api)
       .then(() => {
         expect(dispatch).toHaveBeenCalledTimes(3);
-
         expect(dispatch).toHaveBeenNthCalledWith(1, {
           type: types.SET_AUTH,
           payload: null,

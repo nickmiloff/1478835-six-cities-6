@@ -2,7 +2,7 @@ import * as types from './types';
 import * as actions from './actions';
 import {simpleMock} from '../../tests-mock';
 
-describe(`Main action creators work correctly`, () => {
+describe(`Offer action creators work correctly`, () => {
   it(`setOffer action creator returns correct action`, () => {
     const expectedAction = {
       type: types.SET_OFFER,

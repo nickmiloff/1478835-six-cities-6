@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withAuth HOC test 'withAuth HOC' should render correctly with authorized user 1`] = `
+<div>
+  <span>
+    true
+  </span>
+</div>
+`;
+
+exports[`withAuth HOC test 'withAuth HOC' should render correctly with unauthorized user 1`] = `
+<div>
+  <span>
+    false
+  </span>
+</div>
+`;

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Spinner from '../components/spiner/spiner';
-import {Statuses} from '../services/load-statuses';
+import Spinner from '../../components/spiner/spiner';
+import {Statuses} from '../../services/load-statuses';
 
 const withLoading = (Component) => {
   const WithLoading = (props) => {

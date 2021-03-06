@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {getIsAuth} from '../store/app/selectors';
+import {getIsAuth} from '../../store/app/selectors';
 
 const withAuth = (Component) => {
   const WithAuth = (props) => <Component {...props} />;

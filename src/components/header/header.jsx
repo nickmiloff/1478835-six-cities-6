@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 import {authInfoPropTypes} from '../../prop-types.prop';
 import {getUser} from '../../store/app/selectors';
 import {logout} from '../../store/app/operations';
-import withAuth from '../../hocs/withAuth';
+import withAuth from '../../hocs/with-auth/with-auth';
 
 const styles = {
   border: `none`,

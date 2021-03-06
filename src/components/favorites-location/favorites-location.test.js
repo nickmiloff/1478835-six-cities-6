@@ -7,14 +7,13 @@ import {cardsFull} from '../../tests-mock';
 
 describe(`FavoritesLocation component test`, () => {
   it(`'FavoritesLocation component' should render correctly`, () => {
-    const CITY = `Paris`;
-    const CARDS = cardsFull.adapted;
+    const city = `Paris`;
 
     const {container} = render(
         <Test>
           <FavoritesLocation
-            city={CITY}
-            cards={CARDS} />
+            city={city}
+            cards={cardsFull.adapted} />
         </Test>
     );
 

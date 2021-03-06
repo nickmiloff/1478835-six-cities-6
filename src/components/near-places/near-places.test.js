@@ -7,11 +7,9 @@ import {cardsFull} from '../../tests-mock';
 
 describe(`NearPlaces component test`, () => {
   it(`'NearPlaces component' should render correctly`, () => {
-    const CARDS = cardsFull.adapted;
-
     const {container} = render(
         <Test>
-          <NearPlaces places={CARDS} />
+          <NearPlaces places={cardsFull.adapted} />
         </Test>
     );
 

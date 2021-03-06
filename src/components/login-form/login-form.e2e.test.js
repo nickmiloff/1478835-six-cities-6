@@ -7,16 +7,15 @@ import {PureLoginForm as LoginForm} from './login-form';
 
 describe(`LoginForm component e2e test`, () => {
   it(`LoginForm component' should correctly change fields`, () => {
-    const MAIL = `mail@mail.ru`;
-    const PASSWORD = `123456`;
+    const mail = `mail@mail.ru`;
+    const password = `123456`;
 
     const {getByTestId, getByDisplayValue} = render(<LoginForm onSubmit={jest.fn()} />);
 
-    userEvent.type(getByTestId(`email`), MAIL);
-    userEvent.type(getByTestId(`password`), PASSWORD);
-
-    expect(getByDisplayValue(MAIL)).toBeInTheDocument();
-    expect(getByDisplayValue(PASSWORD)).toBeInTheDocument();
+    userEvent.type(getByTestId(`email`), mail);
+    userEvent.type(getByTestId(`password`), password);
+    expect(getByDisplayValue(mail)).toBeInTheDocument();
+    expect(getByDisplayValue(password)).toBeInTheDocument();
   });
 
   it(`LoginForm component' should call callback when submit form`, () => {
@@ -25,7 +24,6 @@ describe(`LoginForm component e2e test`, () => {
     const {getByTestId} = render(<LoginForm onSubmit={handlerOnSubmit} />);
 
     fireEvent.submit(getByTestId(`form`));
-
     expect(handlerOnSubmit).toHaveBeenCalled();
   });
 });

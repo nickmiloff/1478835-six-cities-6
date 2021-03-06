@@ -5,9 +5,9 @@ import Locations from './locations';
 
 describe(`Locations component test`, () => {
   it(`'Locations component' should render correctly`, () => {
-    const ACTIVE_LOCATION = `Paris`;
+    const activeLocation = `Paris`;
 
-    const {container} = render(<Locations activeLocation={ACTIVE_LOCATION} changeLocation={jest.fn()} />);
+    const {container} = render(<Locations activeLocation={activeLocation} changeLocation={jest.fn()} />);
 
     expect(container).toMatchSnapshot();
   });

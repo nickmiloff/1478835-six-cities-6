@@ -7,16 +7,15 @@ import {cardsFull} from '../../tests-mock';
 
 describe(`CardsList component test`, () => {
   it(`'CardsList component' should render correctly`, () => {
-    const CARDS = cardsFull.adapted;
-    const CARD_TYPE = `main`;
+    const type = `main`;
 
     const {container} = render(
         <Test>
           <CardsList
-            cards={CARDS}
-            cardType={CARD_TYPE}
-            onChnageActiveCardId={() => {}}
-            onFavoriteClick={() => {}} />
+            cards={cardsFull.adapted}
+            cardType={type}
+            onChnageActiveCardId={jest.fn()}
+            onFavoriteClick={jest.fn()} />
         </Test>
     );
 

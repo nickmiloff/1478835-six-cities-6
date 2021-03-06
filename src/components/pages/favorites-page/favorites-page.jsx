@@ -8,7 +8,7 @@ import Footer from '../../footer/footer';
 import FavoritesEmpty from '../../favorites-empty/favorites-empty';
 import Favorites from '../../favorites/favorites';
 import {loadFavorites} from '../../../store/favorites/operations';
-import withLoading from '../../../hocs/withLoading';
+import withLoading from '../../../hocs/with-loading/with-loading';
 
 const FavoritesPage = ({cards, onComponentMount}) => {
   useEffect(() => {
