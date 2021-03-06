@@ -2,6 +2,7 @@ import MockAdapter from 'axios-mock-adapter';
 import {createAPI} from '../../services/api';
 import * as operations from './operations';
 import * as types from './types';
+import * as mainTypes from '../main/types';
 import {cardsFull, comments} from '../../tests-mock';
 import {Statuses} from '../../services/load-statuses';
 
@@ -90,6 +91,10 @@ describe(`Offer async operation work correctly`, () => {
           type: types.SET_OFFER,
           payload: cardsFull.adapted[0],
         });
+        expect(dispatch).toHaveBeenNthCalledWith(2, {
+          type: mainTypes.CHANGE_CARD,
+          payload: cardsFull.adapted[0],
+        });
       });
   });
 
@@ -107,6 +112,10 @@ describe(`Offer async operation work correctly`, () => {
         expect(dispatch).toHaveBeenCalledTimes(2);
         expect(dispatch).toHaveBeenNthCalledWith(1, {
           type: types.CHANGE_NEARBY,
+          payload: cardsFull.adapted[0],
+        });
+        expect(dispatch).toHaveBeenNthCalledWith(2, {
+          type: mainTypes.CHANGE_CARD,
           payload: cardsFull.adapted[0],
         });
       });

@@ -2,6 +2,7 @@ import MockAdapter from 'axios-mock-adapter';
 import {createAPI} from '../../services/api';
 import * as operations from './operations';
 import * as types from './types';
+import * as middlewaresTypes from '../middlewares/types';
 import {auth, user} from '../../tests-mock';
 
 const api = createAPI(() => {});
@@ -43,6 +44,10 @@ describe(`App async operation work correctly`, () => {
           type: types.SET_AUTH,
           payload: auth.adapted,
         });
+        expect(dispatch).toHaveBeenNthCalledWith(2, {
+          type: middlewaresTypes.REDIRECT_TO_ROUTE,
+          payload: `/`
+        });
       });
   });
 
@@ -62,6 +67,10 @@ describe(`App async operation work correctly`, () => {
         expect(dispatch).toHaveBeenNthCalledWith(1, {
           type: types.SET_AUTH,
           payload: null,
+        });
+        expect(dispatch).toHaveBeenNthCalledWith(2, {
+          type: middlewaresTypes.REDIRECT_TO_ROUTE,
+          payload: `/`
         });
       });
   });

@@ -132,6 +132,7 @@ exports[`Reviews component test Reviews component' should render correctly with 
     <form
       action="#"
       class="reviews__form form"
+      data-testid="form"
       method="post"
     >
       <label

@@ -80,6 +80,7 @@ exports[`MainPage component test 'MainPage component' should render correctly 1`
             >
               <a
                 class="locations__item-link tabs__item tabs__item--active"
+                data-testid="tab-link"
               >
                 <span>
                   Paris
@@ -91,6 +92,7 @@ exports[`MainPage component test 'MainPage component' should render correctly 1`
             >
               <a
                 class="locations__item-link tabs__item"
+                data-testid="tab-link"
               >
                 <span>
                   Cologne
@@ -102,6 +104,7 @@ exports[`MainPage component test 'MainPage component' should render correctly 1`
             >
               <a
                 class="locations__item-link tabs__item"
+                data-testid="tab-link"
               >
                 <span>
                   Brussels
@@ -113,6 +116,7 @@ exports[`MainPage component test 'MainPage component' should render correctly 1`
             >
               <a
                 class="locations__item-link tabs__item"
+                data-testid="tab-link"
               >
                 <span>
                   Amsterdam
@@ -124,6 +128,7 @@ exports[`MainPage component test 'MainPage component' should render correctly 1`
             >
               <a
                 class="locations__item-link tabs__item"
+                data-testid="tab-link"
               >
                 <span>
                   Hamburg
@@ -135,6 +140,7 @@ exports[`MainPage component test 'MainPage component' should render correctly 1`
             >
               <a
                 class="locations__item-link tabs__item"
+                data-testid="tab-link"
               >
                 <span>
                   Dusseldorf

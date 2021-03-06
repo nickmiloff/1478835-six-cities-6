@@ -53,6 +53,7 @@ exports[`CardsList component test 'CardsList component' should render correctly 
           </div>
           <button
             class="place-card__bookmark-button button"
+            data-testid="to-bookmarks-button"
             type="button"
           >
             <svg
@@ -145,6 +146,7 @@ exports[`CardsList component test 'CardsList component' should render correctly 
           </div>
           <button
             class="place-card__bookmark-button button"
+            data-testid="to-bookmarks-button"
             type="button"
           >
             <svg
@@ -237,6 +239,7 @@ exports[`CardsList component test 'CardsList component' should render correctly 
           </div>
           <button
             class="place-card__bookmark-button button place-card__bookmark-button--active"
+            data-testid="to-bookmarks-button"
             type="button"
           >
             <svg

@@ -6,11 +6,9 @@ import PlacesSorting from './places-sorting';
 
 describe(`PlacesSorting component test`, () => {
   it(`PlacesSorting component' should render correctly`, () => {
-    const ACTIVE_OPTION = `Popular`;
-
     const {container} = render(
         <Test>
-          <PlacesSorting activeOption={ACTIVE_OPTION} onChangeOption={() => {}} />
+          <PlacesSorting />
         </Test>
     );
 

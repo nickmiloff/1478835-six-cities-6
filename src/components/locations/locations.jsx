@@ -13,7 +13,8 @@ const Locations = ({activeLocation, changeLocation}) => {
               className={`locations__item-link tabs__item${location === activeLocation && ` tabs__item--active` || ``}`}
               onClick={() => {
                 changeLocation(location);
-              }}>
+              }}
+              data-testid="tab-link">
               <span>{location}</span>
             </a>
           </li>

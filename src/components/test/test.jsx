@@ -8,14 +8,15 @@ import * as stores from './mock-store';
 
 const Test = ({children, initial = true, pushUrl = null}) => {
   const mockStore = configureStore({});
-  const store = initial ? stores.empty : stores.notEmpty;
+  const store = mockStore(() => initial ? stores.empty : stores.notEmpty);
   const history = createMemoryHistory();
   if (pushUrl) {
     history.push(pushUrl);
   }
+  store.dispatch = () => {};
 
   return (
-    <Provider store={mockStore(() => store)}>
+    <Provider store={store}>
       <Router history={history}>
         {children}
       </Router>

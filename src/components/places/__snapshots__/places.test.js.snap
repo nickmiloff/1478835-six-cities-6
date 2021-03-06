@@ -29,6 +29,7 @@ exports[`Places component test Places component' should render correctly 1`] = `
       </span>
       <span
         class="places__sorting-type"
+        data-testid="menu"
         tabindex="0"
       >
         Popular
@@ -47,24 +48,28 @@ exports[`Places component test Places component' should render correctly 1`] = `
       >
         <li
           class="places__option places__option--active\\""
+          data-testid="option"
           tabindex="0"
         >
           Popular
         </li>
         <li
           class="places__option"
+          data-testid="option"
           tabindex="0"
         >
           Price: low to high
         </li>
         <li
           class="places__option"
+          data-testid="option"
           tabindex="0"
         >
           Price: high to low
         </li>
         <li
           class="places__option"
+          data-testid="option"
           tabindex="0"
         >
           Top rated first
@@ -122,6 +127,7 @@ exports[`Places component test Places component' should render correctly 1`] = `
             </div>
             <button
               class="place-card__bookmark-button button"
+              data-testid="to-bookmarks-button"
               type="button"
             >
               <svg
@@ -214,6 +220,7 @@ exports[`Places component test Places component' should render correctly 1`] = `
             </div>
             <button
               class="place-card__bookmark-button button"
+              data-testid="to-bookmarks-button"
               type="button"
             >
               <svg
@@ -306,6 +313,7 @@ exports[`Places component test Places component' should render correctly 1`] = `
             </div>
             <button
               class="place-card__bookmark-button button place-card__bookmark-button--active"
+              data-testid="to-bookmarks-button"
               type="button"
             >
               <svg

@@ -50,6 +50,7 @@ exports[`Card component test 'Card component' should render correctly 1`] = `
         </div>
         <button
           class="place-card__bookmark-button button"
+          data-testid="to-bookmarks-button"
           type="button"
         >
           <svg

@@ -68,7 +68,8 @@ const Card = ({isPremium, previewImage, price, isFavorite, rating, title, id, ty
           <button
             className={`place-card__bookmark-button button${isFavorite && ` place-card__bookmark-button--active` || ``}`}
             type="button"
-            onClick={() => isAuth ? onFavoriteClick(id, !isFavorite) : history.push(`/login`)}>
+            onClick={() => isAuth ? onFavoriteClick(id, !isFavorite) : history.push(`/login`)}
+            data-testid="to-bookmarks-button">
             <svg className="place-card__bookmark-icon" width="18" height="19">
               <use xlinkHref="#icon-bookmark"></use>
             </svg>
@@ -98,3 +99,6 @@ Card.propTypes = {
 };
 
 export default withAuth(Card);
+export {
+  Card as PureCard
+};

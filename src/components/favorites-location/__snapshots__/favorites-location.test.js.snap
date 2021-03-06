@@ -72,6 +72,7 @@ exports[`FavoritesLocation component test 'FavoritesLocation component' should r
             </div>
             <button
               class="place-card__bookmark-button button"
+              data-testid="to-bookmarks-button"
               type="button"
             >
               <svg
@@ -164,6 +165,7 @@ exports[`FavoritesLocation component test 'FavoritesLocation component' should r
             </div>
             <button
               class="place-card__bookmark-button button"
+              data-testid="to-bookmarks-button"
               type="button"
             >
               <svg
@@ -256,6 +258,7 @@ exports[`FavoritesLocation component test 'FavoritesLocation component' should r
             </div>
             <button
               class="place-card__bookmark-button button place-card__bookmark-button--active"
+              data-testid="to-bookmarks-button"
               type="button"
             >
               <svg

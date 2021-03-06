@@ -17,7 +17,8 @@ const PlacesSorting = ({activeOption, onChangeOption}) => {
         tabIndex="0"
         onClick={() => {
           setIsOpen((current) => !current);
-        }}>
+        }}
+        data-testid="menu">
         {activeOption}
         <svg className="places__sorting-arrow" width="7" height="4">
           <use xlinkHref="#icon-arrow-select"></use>
@@ -32,7 +33,8 @@ const PlacesSorting = ({activeOption, onChangeOption}) => {
             onClick={() => {
               onChangeOption(option);
               setIsOpen(false);
-            }}>
+            }}
+            data-testid="option">
             {option}
           </li>
         )}
@@ -55,3 +57,6 @@ const mapDispatchToProps = {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlacesSorting);
+export {
+  PlacesSorting as PurePlacesSorting
+};

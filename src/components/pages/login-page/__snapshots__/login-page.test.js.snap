@@ -75,6 +75,7 @@ exports[`LoginPage component test 'LoginPage component' should render correctly 
           <form
             action="#"
             class="login__form form"
+            data-testid="form"
             method="post"
           >
             <div

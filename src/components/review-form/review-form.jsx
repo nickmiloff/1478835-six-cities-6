@@ -32,7 +32,8 @@ const ReviewForm = ({onSubmit, isLoaded}) => {
       onSubmit={(evt) => {
         evt.preventDefault();
         onSubmit(id, review, rating);
-      }}>
+      }}
+      data-testid="form">
       <label className="reviews__label form__label" htmlFor="review">Your review</label>
       <div className="reviews__rating-form form__rating">
         {Array(5).fill(``).map((_, index) =>
@@ -96,3 +97,6 @@ const mapDispatchToProps = {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReviewForm);
+export {
+  ReviewForm as PureReviewForm
+};

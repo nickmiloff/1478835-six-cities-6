@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Locations component test Locations component' should render correctly 1`] = `
+exports[`Locations component test 'Locations component' should render correctly 1`] = `
 <div>
   <section
     class="locations container"
@@ -13,6 +13,7 @@ exports[`Locations component test Locations component' should render correctly 1
       >
         <a
           class="locations__item-link tabs__item tabs__item--active"
+          data-testid="tab-link"
         >
           <span>
             Paris
@@ -24,6 +25,7 @@ exports[`Locations component test Locations component' should render correctly 1
       >
         <a
           class="locations__item-link tabs__item"
+          data-testid="tab-link"
         >
           <span>
             Cologne
@@ -35,6 +37,7 @@ exports[`Locations component test Locations component' should render correctly 1
       >
         <a
           class="locations__item-link tabs__item"
+          data-testid="tab-link"
         >
           <span>
             Brussels
@@ -46,6 +49,7 @@ exports[`Locations component test Locations component' should render correctly 1
       >
         <a
           class="locations__item-link tabs__item"
+          data-testid="tab-link"
         >
           <span>
             Amsterdam
@@ -57,6 +61,7 @@ exports[`Locations component test Locations component' should render correctly 1
       >
         <a
           class="locations__item-link tabs__item"
+          data-testid="tab-link"
         >
           <span>
             Hamburg
@@ -68,6 +73,7 @@ exports[`Locations component test Locations component' should render correctly 1
       >
         <a
           class="locations__item-link tabs__item"
+          data-testid="tab-link"
         >
           <span>
             Dusseldorf

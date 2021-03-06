@@ -15,7 +15,8 @@ const LoginForm = ({onSubmit}) => {
       onSubmit={(evt) => {
         evt.preventDefault();
         onSubmit({email, password});
-      }}>
+      }}
+      data-testid="form">
       <div className="login__input-wrapper form__input-wrapper">
         <label className="visually-hidden">E-mail</label>
         <input
@@ -60,3 +61,6 @@ const mapDispatchToProps = {
 };
 
 export default connect(null, mapDispatchToProps)(LoginForm);
+export {
+  LoginForm as PureLoginForm
+};

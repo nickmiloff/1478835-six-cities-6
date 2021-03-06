@@ -26,6 +26,28 @@ describe(`Test routing`, () => {
     expect(!!screen.getAllByText(`Sign in`)).toBe(true);
   });
 
+  it(`Render 'Favorites page' when user navigate to '/favorites' url`, () => {
+    render(
+        <Test pushUrl={ROUTES.favorites} initial={false}>
+          <App />
+        </Test>
+    );
+
+    expect(screen.getByText(`Saved listing`)).toBeInTheDocument();
+  });
+
+  it(`Render 'OfferPage page' when user navigate to '/offer/:id' url`, () => {
+    render(
+        <Test pushUrl={`${ROUTES.offer}/:id`} initial={false}>
+          <App />
+        </Test>
+    );
+
+    expect(screen.getByText(`Tile House`)).toBeInTheDocument();
+    expect(screen.getByText(`Discover daily local life in city center, friendly neighborhood, clandestine casino, karaoke, old-style artisans, art gallery and artist studio downstairs.`)).toBeInTheDocument();
+  });
+
+
   it(`Render 'Not found page' when user navigate to non-existent url`, () => {
     render(
         <Test pushUrl="/non-existent-url">

@@ -5,6 +5,7 @@ exports[`LoginForm component test LoginForm component' should render correctly 1
   <form
     action="#"
     class="login__form form"
+    data-testid="form"
     method="post"
   >
     <div

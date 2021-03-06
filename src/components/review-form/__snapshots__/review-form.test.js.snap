@@ -5,6 +5,7 @@ exports[`ReviewForm component test ReviewForm component' should render correctly
   <form
     action="#"
     class="reviews__form form"
+    data-testid="form"
     method="post"
   >
     <label

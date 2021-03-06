@@ -1,0 +1,348 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OfferPage component test 'OfferPage component' should render correctly 1`] = `
+<div>
+  <div
+    class="page"
+  >
+    <header
+      class="header"
+    >
+      <div
+        class="container"
+      >
+        <div
+          class="header__wrapper"
+        >
+          <div
+            class="header__left"
+          >
+            <a
+              class="header__logo-link header__logo-link--active"
+              href="/"
+            >
+              <img
+                alt="6 cities logo"
+                class="header__logo"
+                height="41"
+                src="img/logo.svg"
+                width="81"
+              />
+            </a>
+          </div>
+          <nav
+            class="header__nav"
+          >
+            <ul
+              class="header__nav-list"
+            >
+              <li
+                class="header__nav-item user"
+              >
+                <a
+                  class="header__nav-link header__nav-link--profile"
+                  href="/login"
+                >
+                  <div
+                    class="header__avatar-wrapper user__avatar-wrapper"
+                  />
+                  <span
+                    class="header__login"
+                  >
+                    Sign in
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main
+      class="page__main page__main--property"
+    >
+      <section
+        class="property"
+      >
+        <div
+          class="property__gallery-container container"
+        >
+          <div
+            class="property__gallery"
+          />
+        </div>
+        <div
+          class="property__container container"
+        >
+          <div
+            class="property__wrapper"
+          >
+            
+            <div
+              class="property__name-wrapper"
+            >
+              <h1
+                class="property__name"
+              />
+              <button
+                class="property__bookmark-button button"
+                type="button"
+              >
+                <svg
+                  class="property__bookmark-icon"
+                  height="33"
+                  width="31"
+                >
+                  <use
+                    xlink:href="#icon-bookmark"
+                  />
+                </svg>
+                <span
+                  class="visually-hidden"
+                >
+                  To bookmarks
+                </span>
+              </button>
+            </div>
+            <div
+              class="property__rating rating"
+            >
+              <div
+                class="property__stars rating__stars"
+              >
+                <span
+                  style="width: 0%;"
+                />
+                <span
+                  class="visually-hidden"
+                >
+                  Rating
+                </span>
+              </div>
+              <span
+                class="property__rating-value rating__value"
+              >
+                0
+              </span>
+            </div>
+            <ul
+              class="property__features"
+            >
+              <li
+                class="property__feature property__feature--entire"
+              />
+              <li
+                class="property__feature property__feature--bedrooms"
+              >
+                0
+                 Bedrooms
+              </li>
+              <li
+                class="property__feature property__feature--adults"
+              >
+                Max 
+                0
+                 adults
+              </li>
+            </ul>
+            <div
+              class="property__price"
+            >
+              <b
+                class="property__price-value"
+              >
+                €
+                0
+              </b>
+              <span
+                class="property__price-text"
+              >
+                 night
+              </span>
+            </div>
+            <div
+              class="property__inside"
+            >
+              <h2
+                class="property__inside-title"
+              >
+                What's inside
+              </h2>
+              <ul
+                class="property__inside-list"
+              />
+            </div>
+            <div
+              class="property__host"
+            >
+              <h2
+                class="property__host-title"
+              >
+                Meet the host
+              </h2>
+              <div
+                class="property__host-user user"
+              >
+                <div
+                  class="property__avatar-wrapper user__avatar-wrapper property__avatar-wrapper--pro"
+                >
+                  <img
+                    alt="Host avatar"
+                    class="property__avatar user__avatar"
+                    height="74"
+                    src=""
+                    width="74"
+                  />
+                </div>
+                <span
+                  class="property__user-name"
+                />
+              </div>
+              <div
+                class="property__description"
+              >
+                <p
+                  class="property__text"
+                />
+              </div>
+            </div>
+            <section
+              class="property__reviews reviews"
+            >
+              <h2
+                class="reviews__title"
+              >
+                Reviews · 
+                <span
+                  class="reviews__amount"
+                >
+                  0
+                </span>
+              </h2>
+              <ul
+                class="reviews__list"
+              />
+              
+            </section>
+          </div>
+        </div>
+        <section
+          class="property__map map"
+        >
+          <div
+            class="leaflet-container leaflet-grab leaflet-touch-drag"
+            id="map"
+            style="width: 100%; height: 100%; position: relative;"
+            tabindex="0"
+          >
+            <div
+              class="leaflet-pane leaflet-map-pane"
+              style="left: 0px; top: 0px;"
+            >
+              <div
+                class="leaflet-pane leaflet-tile-pane"
+              >
+                <div
+                  class="leaflet-layer "
+                  style="z-index: 1;"
+                >
+                  <div
+                    class="leaflet-tile-container leaflet-zoom-animated"
+                    style="z-index: 18; left: 0px; top: 0px;"
+                  >
+                    <img
+                      alt=""
+                      class="leaflet-tile"
+                      role="presentation"
+                      src="https://b.basemaps.cartocdn.com/rastertiles/voyager/12/2103/1345.png"
+                      style="width: 256px; height: 256px; left: -205px; top: -219px;"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="leaflet-pane leaflet-shadow-pane"
+              />
+              <div
+                class="leaflet-pane leaflet-overlay-pane"
+              />
+              <div
+                class="leaflet-pane leaflet-marker-pane"
+              >
+                <img
+                  alt=""
+                  class="leaflet-marker-icon leaflet-zoom-hide leaflet-interactive"
+                  src="img/pin-active.svg"
+                  style="margin-left: -15px; margin-top: -15px; width: 30px; height: 30px; left: 0px; top: 0px; z-index: 0;"
+                  tabindex="0"
+                />
+              </div>
+              <div
+                class="leaflet-pane leaflet-tooltip-pane"
+              />
+              <div
+                class="leaflet-pane leaflet-popup-pane"
+              />
+            </div>
+            <div
+              class="leaflet-control-container"
+            >
+              <div
+                class="leaflet-top leaflet-left"
+              />
+              <div
+                class="leaflet-top leaflet-right"
+              />
+              <div
+                class="leaflet-bottom leaflet-left"
+              />
+              <div
+                class="leaflet-bottom leaflet-right"
+              >
+                <div
+                  class="leaflet-control-attribution leaflet-control"
+                >
+                  <a
+                    href="https://leafletjs.com"
+                    title="A JS library for interactive maps"
+                  >
+                    Leaflet
+                  </a>
+                   | © 
+                  <a
+                    href="https://www.openstreetmap.org/copyright"
+                  >
+                    OpenStreetMap
+                  </a>
+                   contributors © 
+                  <a
+                    href="https://carto.com/attributions"
+                  >
+                    CARTO
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <div
+        class="container"
+      >
+        <section
+          class="near-places places"
+        >
+          <h2
+            class="near-places__title"
+          >
+            Other places in the neighbourhood
+          </h2>
+          <div
+            class="near-places__list places__list"
+          />
+        </section>
+      </div>
+    </main>
+  </div>
+</div>
+`;
