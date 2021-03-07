@@ -55,6 +55,7 @@ exports[`Header component test 'Header component' should render correctly with a
             >
               <button
                 class="header__nav-link header__nav-link--profile"
+                data-testid="logout"
                 style="background-color: transparent;"
               >
                 <span

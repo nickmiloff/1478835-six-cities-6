@@ -86,6 +86,7 @@ exports[`OfferPage component test 'OfferPage component' should render correctly 
               />
               <button
                 class="property__bookmark-button button"
+                data-testid="to-bookmarks"
                 type="button"
               >
                 <svg

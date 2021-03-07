@@ -36,7 +36,8 @@ const OfferInfo = ({offer, reviews, mapPlaces, onFavoriteClick, isAuth}) => {
             <button
               className={`property__bookmark-button button${isFavorite && ` property__bookmark-button--active` || ``}`}
               type="button"
-              onClick={() => isAuth ? onFavoriteClick(id, !isFavorite) : history.push(`/login`)}>
+              onClick={() => isAuth ? onFavoriteClick(id, !isFavorite) : history.push(`/login`)}
+              data-testid="to-bookmarks">
               <svg className="property__bookmark-icon" width="31" height="33">
                 <use xlinkHref="#icon-bookmark"></use>
               </svg>
@@ -99,6 +100,8 @@ const OfferInfo = ({offer, reviews, mapPlaces, onFavoriteClick, isAuth}) => {
   );
 };
 
+const SemiPureOfferInfo = withAuth(OfferInfo);
+
 OfferInfo.propTypes = {
   offer: PropTypes.shape(offerPropTypes).isRequired,
   reviews: PropTypes.array.isRequired,
@@ -115,3 +118,6 @@ export default compose(
     connect(null, mapDispatchToProps),
     withAuth
 )(OfferInfo);
+export {
+  SemiPureOfferInfo
+};

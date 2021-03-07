@@ -35,7 +35,11 @@ const Header = ({isAuth, user, onLogout}) => {
               </li>
               {isAuth &&
                 <li className="header__nav-item user">
-                  <button className="header__nav-link header__nav-link--profile" style={styles} onClick={() => onLogout()}>
+                  <button
+                    className="header__nav-link header__nav-link--profile"
+                    style={styles}
+                    onClick={() => onLogout()}
+                    data-testid="logout">
                     <span className="header__login">Logout</span>
                   </button>
                 </li>
@@ -66,3 +70,6 @@ export default compose(
     connect(mapStateToProps, mapDispatchToProps),
     withAuth
 )(Header);
+export {
+  Header as PureHeader
+};

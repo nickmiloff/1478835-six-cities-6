@@ -58,6 +58,7 @@ exports[`FavoritesPage component test 'FavoritesPage component' should render co
               >
                 <button
                   class="header__nav-link header__nav-link--profile"
+                  data-testid="logout"
                   style="background-color: transparent;"
                 >
                   <span

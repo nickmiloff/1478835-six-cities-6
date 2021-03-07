@@ -90,6 +90,7 @@ exports[`OfferInfo component test OfferInfo component' should render correctly 1
           </h1>
           <button
             class="property__bookmark-button button"
+            data-testid="to-bookmarks"
             type="button"
           >
             <svg
