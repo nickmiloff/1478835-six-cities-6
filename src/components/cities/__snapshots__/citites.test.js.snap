@@ -35,7 +35,7 @@ exports[`Cities component test 'Cities component' should render correctly with c
           </span>
           <span
             class="places__sorting-type"
-            data-testid="menu"
+            data-testid="options-button"
             tabindex="0"
           >
             Popular
@@ -51,6 +51,7 @@ exports[`Cities component test 'Cities component' should render correctly with c
           </span>
           <ul
             class="places__options places__options--custom"
+            data-testid="options-container"
           >
             <li
               class="places__option places__option--active\\""

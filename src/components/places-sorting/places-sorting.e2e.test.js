@@ -17,4 +17,19 @@ describe(`PlacesSorting component e2e test`, () => {
     fireEvent.click(getAllByTestId(`option`)[0]);
     expect(handlerChangeOption).toHaveBeenCalled();
   });
+
+  it(`PlacesSorting component' should change state when click on 'options-button' button`, () => {
+    const activeOption = `Popular`;
+
+    const {getByTestId} = render(
+        <PlacesSorting
+          activeOption={activeOption}
+          onChangeOption={jest.fn()} />
+    );
+
+    fireEvent.click(getByTestId(`options-button`));
+    expect(getByTestId(`options-container`).classList.length).toBe(3);
+    fireEvent.click(getByTestId(`options-button`));
+    expect(getByTestId(`options-container`).classList.length).toBe(2);
+  });
 });

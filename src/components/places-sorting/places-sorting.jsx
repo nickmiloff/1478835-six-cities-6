@@ -18,13 +18,15 @@ const PlacesSorting = ({activeOption, onChangeOption}) => {
         onClick={() => {
           setIsOpen((current) => !current);
         }}
-        data-testid="menu">
+        data-testid="options-button">
         {activeOption}
         <svg className="places__sorting-arrow" width="7" height="4">
           <use xlinkHref="#icon-arrow-select"></use>
         </svg>
       </span>
-      <ul className={`places__options places__options--custom${isOpen && ` places__options--opened` || ``}`}>
+      <ul
+        className={`places__options places__options--custom${isOpen && ` places__options--opened` || ``}`}
+        data-testid="options-container">
         {OPTIONS.map((option, index) =>
           <li
             className={`places__option${option === activeOption && ` places__option--active"` || ``}`}
