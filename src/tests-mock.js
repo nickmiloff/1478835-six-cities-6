@@ -45,6 +45,115 @@ export const cards = {
   ]
 };
 
+export const selectorsCard = {
+  start: [
+    {
+      city: {
+        name: `Paris`
+      },
+      price: 100,
+      rating: 3
+    },
+    {
+      city: {
+        name: `Paris`
+      },
+      price: 80,
+      rating: 5
+    },
+    {
+      city: {
+        name: `Amsterdam`
+      },
+      price: 90,
+      rating: 4
+    },
+    {
+      city: {
+        name: `Hamburg`
+      },
+      price: 100,
+      rating: 2
+    },
+    {
+      city: {
+        name: `Paris`
+      },
+      price: 120,
+      rating: 4
+    }
+  ],
+  byPrice: [
+    {
+      city: {
+        name: `Paris`
+      },
+      price: 120,
+      rating: 4
+    },
+    {
+      city: {
+        name: `Paris`
+      },
+      price: 100,
+      rating: 3
+    },
+    {
+      city: {
+        name: `Paris`
+      },
+      price: 80,
+      rating: 5
+    }
+  ],
+  byRating: [
+    {
+      city: {
+        name: `Paris`
+      },
+      price: 80,
+      rating: 5
+    },
+    {
+      city: {
+        name: `Paris`
+      },
+      price: 120,
+      rating: 4
+    },
+    {
+      city: {
+        name: `Paris`
+      },
+      price: 100,
+      rating: 3
+    }
+  ],
+  any: [
+    {
+      city: {
+        name: `Paris`
+      },
+      price: 100,
+      rating: 3
+    },
+    {
+      city: {
+        name: `Paris`
+      },
+      price: 80,
+      rating: 5
+    },
+    {
+      city: {
+        name: `Paris`
+      },
+      price: 120,
+      rating: 4
+    }
+  ]
+};
+
 export const auth = {
   api: {
     "id": 1,
