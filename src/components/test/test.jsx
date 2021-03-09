@@ -49,18 +49,18 @@ const TestStore = ({children, initial = true}) => {
 };
 
 Test.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.func, PropTypes.object]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.arrayOf(PropTypes.object)]).isRequired,
   initial: PropTypes.bool,
   pushUrl: PropTypes.string
 };
 
 TestHistory.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.func, PropTypes.object]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.arrayOf(PropTypes.object)]).isRequired,
   pushUrl: PropTypes.string
 };
 
 TestStore.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.func, PropTypes.object]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.arrayOf(PropTypes.object)]).isRequired,
   initial: PropTypes.bool
 };
 

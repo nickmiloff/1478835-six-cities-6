@@ -1,9 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PrivateRoute component test 'PrivateRoute component' should correctly redirect to '/' with unauthorized user 1`] = `<div />`;
+exports[`PrivateRoute component test 'PrivateRoute component' should correctly redirect to '/' with unauthorized user 1`] = `
+<div>
+  <h1>
+    Login page
+  </h1>
+</div>
+`;
 
 exports[`PrivateRoute component test 'PrivateRoute component' should render correctly 'component' with authorized user 1`] = `
 <div>
-  <div />
+  <h1>
+    Mock component
+  </h1>
 </div>
 `;
