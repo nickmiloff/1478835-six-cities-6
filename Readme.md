@@ -1,4 +1,4 @@
-# Личный проект «Шесть городов» [![Build status][travis-image]][travis-url]
+# Личный проект «Шесть городов»
 
 - SPA
 - MVP
