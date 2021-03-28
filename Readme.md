@@ -1,8 +1,12 @@
 # Личный проект «Шесть городов»
 
 - SPA
-- MVP
-- ООП
+- React
+- Redux
+- Thunk
+- Axios
+- Jest (snapshots & e2e)
+- Reselect
 
 ---
 
